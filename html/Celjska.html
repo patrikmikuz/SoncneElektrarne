@@ -1,0 +1,1921 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	PVportal - slovenski portal za fotovoltaiko
+</title><link href="Styles/images/sonce.ico" rel="shortcut icon" /><link href="Styles/NewStyle.css" rel="stylesheet" type="text/css" media="screen" />
+    <style type="text/css">
+/* Easy CSS Tooltip - by Koller Juergen [www.kollermedia.at] */
+a:hover {background:#ffffff; text-decoration:none;} /*BG color is a must for IE6  */
+a.tooltip span {display:none; padding:2px 3px; margin-left:8px; }
+a.tooltip:hover span{display:inline; position:absolute; border:1px solid #cccccc; background:#ffffff; color:#6c6c6c;}
+
+
+
+</style>
+<script type="text/javascript">
+    function ShowImage(src, imgID) {
+        var img = document.getElementById(imgID);
+        img.src = src;
+        img.style.display = "block";
+    }
+    function HideImage(imgID) {
+        document.getElementById(imgID).style.display = "none";
+    }
+</script>
+<style type="text/css">
+	/* <![CDATA[ */
+	#mainMenu img.icon { border-style:none;vertical-align:middle; }
+	#mainMenu img.separator { border-style:none;display:block; }
+	#mainMenu img.horizontal-separator { border-style:none;vertical-align:middle; }
+	#mainMenu ul { list-style:none;margin:0;padding:0;width:auto; }
+	#mainMenu ul.dynamic { z-index:1; }
+	#mainMenu a { text-decoration:none;white-space:nowrap;display:block; }
+	#mainMenu a.static { text-decoration:none;border-style:none;padding-left:0.15em;padding-right:0.15em; }
+	#mainMenu a.popout { background-image:url("/WebResource.axd?d=osHMl6ZkS_ezBE8PUcw8Eau4Rc40_3uto4ZBAYk8yldRX1ZhRV0Am4fQiG6AHrQ8WdBvW7JzgP5zt-Ihn2wUtshxK-SoQHzy4Iw8hJfquVk1&t=635418570520000000");background-repeat:no-repeat;background-position:right center;padding-right:14px; }
+	#mainMenu a.static.selected { text-decoration:none;border-style:none; }
+	/* ]]> */
+</style><style type="text/css">
+	/* <![CDATA[ */
+	#blankSublinks_subMenu img.icon { border-style:none;vertical-align:middle; }
+	#blankSublinks_subMenu img.separator { border-style:none;display:block; }
+	#blankSublinks_subMenu img.horizontal-separator { border-style:none;vertical-align:middle; }
+	#blankSublinks_subMenu ul { list-style:none;margin:0;padding:0;width:auto; }
+	#blankSublinks_subMenu ul.dynamic { z-index:1; }
+	#blankSublinks_subMenu a { text-decoration:none;white-space:nowrap;display:block; }
+	#blankSublinks_subMenu a.static { padding-left:0.15em;padding-right:0.15em; }
+	#blankSublinks_subMenu a.popout { background-image:url("/WebResource.axd?d=osHMl6ZkS_ezBE8PUcw8Eau4Rc40_3uto4ZBAYk8yldRX1ZhRV0Am4fQiG6AHrQ8WdBvW7JzgP5zt-Ihn2wUtshxK-SoQHzy4Iw8hJfquVk1&t=635418570520000000");background-repeat:no-repeat;background-position:right center;padding-right:14px; }
+	/* ]]> */
+</style></head>
+<body id="body">
+
+
+<script src="Scripts/highcharts.js" type="text/javascript"></script>
+  <script src="Scripts/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="Scripts/jquery.js"></script>
+  <script type="text/javascript" src="Scripts/jquery.innerfade.js"></script>
+
+
+  
+    <form method="post" action="SESeznam.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODUxNTIyODA4D2QWAmYPZBYCAgMPZBYCAgEPZBYKAgMQPCsADQIADxYCHgtfIURhdGFCb3VuZGdkDBQrAAcFFzA6MCwwOjEsMDoyLDA6MywwOjQsMDo1FCsAAhYQHgRUZXh0BQVEb21vdh4FVmFsdWUFBURvbW92HgtOYXZpZ2F0ZVVybAUNL1dlbGNvbWUuYXNweB4HVG9vbFRpcAUTU2xvdmVuc2tpIFBWIHBvcnRhbB4HRW5hYmxlZGceClNlbGVjdGFibGVnHghEYXRhUGF0aAUNL3dlbGNvbWUuYXNweB4JRGF0YUJvdW5kZ2QUKwACFg4fAQUMRm90b3ZvbHRhaWthHwIFDEZvdG92b2x0YWlrYR8DBQovVXZvZC5hc3B4HwVnHwZnHwcFCi91dm9kLmFzcHgfCGdkFCsAAhYQHwEFB1NldmFuamUfAgUHU2V2YW5qZR8DBQ8vT2JzZXZhbmplLmFzcHgfBAUPU29uxI1ubyBzZXZhbmplHwVnHwZnHwcFDy9vYnNldmFuamUuYXNweB8IZ2QUKwACFhAfAQUPTmHEjXJ0b3ZhbmplIFNFHwIFD05hxI1ydG92YW5qZSBTRR8DBREvTmFjcnRvdmFuamUuYXNweB8EBQ9OYcSNcnRvdmFuamUgU0UfBWcfBmcfBwURL25hY3J0b3ZhbmplLmFzcHgfCGdkFCsAAhYQHwEFElNvbsSNbmUgZWxla3RyYXJuZR8CBRJTb27EjW5lIGVsZWt0cmFybmUfAwUML1NFdlNMTy5hc3B4HwQFElNvbsSNbmUgZWxla3RyYXJuZR8FZx8GZx8HBQwvc2V2c2xvLmFzcHgfCGdkFCsAAhYQHwEFD09ibm92bGppdmkgdmlyaR8CBQ9PYm5vdmxqaXZpIHZpcmkfAwUSL09ibm92bGppdlNMTy5hc3B4HwQFG09ibm92bGppdmkgdmlyaSB2IFNsb3ZlbmlqaR8FZx8GZx8HBRIvb2Jub3Zsaml2c2xvLmFzcHgfCGdkZGQCEw9kFgICARA8KwANAgAPFgIfAGdkDBQrAAQFCzA6MCwwOjEsMDoyFCsAAhYQHwEFCVNlem5hbSBTRR8CBQlTZXpuYW0gU0UfAwUOL1NFU2V6bmFtLmFzcHgfBWcfBmcfBwUOL3Nlc2V6bmFtLmFzcHgfCGceCFNlbGVjdGVkZ2QUKwACFg4fAQUWU2V6bmFtIFNFIHYgc2Ftb29za3JiaR8CBRZTZXpuYW0gU0UgdiBzYW1vb3NrcmJpHwMFEy9TRVNlem5hbV9uZXRvLmFzcHgfBWcfBmcfBwUTL3Nlc2V6bmFtX25ldG8uYXNweB8IZ2QUKwACFg4fAQUIS2FydGEgU0UfAgUIS2FydGEgU0UfAwUNL1NFa2FydGEuYXNweB8FZx8GZx8HBQ0vc2VrYXJ0YS5hc3B4HwhnZGRkAhUPDxYCHwEFCTEwLjUuMjAxOWRkAhkPDxYCHwEFCTEwLjUuMjAxOWRkAh0PZBYEAgEPDxYCHwEFCDguNS4yMDE5ZGQCDQ8PFgQeCUdyaWRMaW5lcwsqI1N5c3RlbS5XZWIuVUkuV2ViQ29udHJvbHMuR3JpZExpbmVzAR4EXyFTQgKAgCBkZBgBBRtjdGwwMCRibGFua1N1YmxpbmtzJHN1Yk1lbnUPD2QFCVNlem5hbSBTRWRyjTHUHlxZ9EuQ4jTb3g1Q2bv4RpAfmPPwmV2EtLDr3Q==" />
+</div>
+
+
+<script src="/WebResource.axd?d=Y3MSn76S3wRi5sOZEId3E0ocj1oMgGdOQE20B6tafh8CSAdOvSKd_xUy2Dmsf9_B-eCuJ7nyB27RU2y9bQAnINu5nR9HlqWQREGztyWIP9qFGr6m4ppPY6Sahe5zKFgQyXZS8z_oKqGrbVJ6755hwn-xrnhG0_PU1yjdkpf7P981&amp;t=636761462902042267" type="text/javascript"></script>
+<script src="/WebResource.axd?d=OFhnVn3cluRzGPJcyR0Ntzb6vS92-rjzzHBPp9a902DaKsREJ_Tk82ctXYnNO9Wf9CZtNZBwzHAZG6-T_uQlVhhCbroxxg3OzU0ElX8f9bK7ai4mZlbDo6emDI0DVvHTVHp63Pn0CqoDH2PpOy8rvSxK5K6D07UUg0DDyCMv2Ao1&amp;t=636761462902042267" type="text/javascript"></script><link href="/WebResource.axd?d=aAJfuqxXo21HGI8FgdUmV7YhuDqV6afzM0uZTRUDCsZ1tRXLP-U_HKXAntSg-FhaC75Nz-adPwBkuWLxn9Ws_ukaAQMyXz_drSsx7ApSOcgkqvYBesW3E7AGpQwRmJzLJJvA0qoe_8X5mfUTDllQHg2&t=636761462902042267" type="text/css" rel="stylesheet"></link><link href="/WebResource.axd?d=0bWEylECWnbuQCcGLt73dSBBtNQG7H9dxOLTtp66cueFnwA3pRMO5qhZOS5M3hdhXVqSIYwk7S1VgGt4SFxZJRwjENFItTcr5vBByaqDxX1K8LWEkIbm6AYhTjzHSlZ88ggqBuGBSgn08AzcPYMrJWlx0Fl2S9r9TFIHZ5ULkTU1&t=636761462902042267" type="text/css" rel="stylesheet"></link>
+<script src="/WebResource.axd?d=2TcpXgLIs6w15NQKhjQNkBU_nfbzAIhqxqItteX2rFj0RXteWGUoJkwF43u2S2Jf5jwMfeNRcB7qRYJUFhCm8qq3mi7DZByr6ATBSmZN4XA1&amp;t=635418570520000000" type="text/javascript"></script>
+		<div class="aspNetHidden">
+
+			<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C801C994" />
+			<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdACG/H40c3zD7N2c8IzEwYEDwIvLK4iOs96PpCKkS4aY8DR8cpwsF7FKxsBiaVYbT96f3jgRD9631H2un0R4eQzEZvEn7gwhd6Uo8OkAEEqHZsxKZMnwgvCjOYd5L4bIAkzXjNYH1nV/VLWPL4axode8nivGxlHCMDxA5XzHC099AvR61pxaXTELaUYfEftIUBn8SSyrLIDbYMlbo+qhIM7tJ8Um1XI1ghYqxSTZADC73rLHj2/8SNSTg9DsG6Wsq4+64/Aw9y5ZL+X1+s5DP/F02urQa8p8SuZBpsa4YrxEYYVL4ZZgMiHlpcl6qVoMdfABfqMVNtBIo8LPGbl4eemAl/p+AoDK4GcsL+YvFZluBY9qawe0ValWN5048gL8v1sReVFm3wUW+bIT3B5UE9UYvOChXYC8EFxdjp+XocMgAT4vHFWgZCqV7ulHvN0xp9feJxFTz2gob3ZWvTMFdxybtwrsTXrmx2I2MIRLLPMnXLE3AHhtSctr+uyYdN3WJqYWJ92ZXmlWIZus4+KnGHDiyYpgXFOyLkTjWaOieZG+7VbGT9eyBZDlPLdI1R28MCTLWsL2cubpoVUxnDOrUcN4fY8KrTHV42Hfz3Y5JBuQYslM/eO8SsoFCOmqG8frnEYUcyHuscEMr/CDutpmrVXUrs8PxK7IBYWpXEKXMRFoVwneVrsdggyo/aZSgnpRl1sV2tWB6ULf9y+dmXPomFwmlGvMa6N4JWwTRKzMiXLiw/w==" />
+		</div>
+    <div id="stran" >
+     <div id="header">
+        <div id="logo-block">
+		    <!-- type your logo and small slogan here -->
+            <p id="logo"><strong>PV</strong><span class="logoblue">portal</span></p>
+		    <p id="slogan">Slovenski portal za fotovoltaiko</p>
+			<!-- end logo and small slogan -->
+
+        </div>    
+        <div id="vreme">
+
+
+
+         <ul id="rotator"> 
+			<?xml version="1.0" encoding="utf-8"?>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Celje</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 14.5 °C
+        <br />
+        Sevanje: 1 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/oblacno.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Koper</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 14.2 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Lesce</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 9.1 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Ljubljana</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 10.9 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Maribor</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 13.8 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Murska Sobota</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 11.4 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Nova Gorica</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 11.4 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Novo mesto</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 10.6 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Slovenj Gradec</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 5.1 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+       
+	     </ul>
+		
+            <script type="text/javascript">
+             $(document).ready(
+         		function () {
+
+	    	    $('#rotator').innerfade({
+		            speed: 'normal',
+		            timeout: 3000,
+		            type: 'sequence',
+		            containerheight: '220px'
+    		    });
+
+	        	}
+        	);
+            </script>
+
+        </div> 
+     </div>
+     <div id="main">
+       
+          <div id="menudiv"> 
+
+<!--menu-->
+ 
+    <table class="headBar" cellpadding="0" cellspacing="0">
+        <tr>
+            <td colspan="3">
+                <!-- Main navigation menu -->
+                <div class="headLinksBar">
+                    
+<div class="AspNet-Menu-Horizontal" id="mainMenu">
+		<table class="AspNet-Menu">
+			<tr>
+				<td class="AspNet-Menu-TopLevel-domov">
+					<a href="/Welcome.aspx" title="Slovenski PV portal">
+						Domov     </a>
+				</td>
+				<td class="AspNet-Menu-TopLevel-fotovoltaika">
+					<a href="/Uvod.aspx">
+						Fotovoltaika     </a>
+				</td>
+				<td class="AspNet-Menu-TopLevel-sevanje">
+					<a href="/Obsevanje.aspx" title="Sončno sevanje">
+						Sevanje     </a>
+				</td>
+				<td class="AspNet-Menu-TopLevel-načrtovanje_se">
+					<a href="/Nacrtovanje.aspx" title="Načrtovanje SE">
+						Načrtovanje SE     </a>
+				</td>
+				<td class="AspNet-Menu-TopLevel-sončne_elektrarne-Selected">
+					<a href="/SEvSLO.aspx" title="Sončne elektrarne">
+						Sončne elektrarne     </a>
+				</td>
+				<td class="AspNet-Menu-TopLevel-obnovljivi_viri">
+					<a href="/ObnovljivSLO.aspx" title="Obnovljivi viri v Sloveniji">
+						Obnovljivi viri     </a>
+				</td>
+			</tr></table>
+
+	</div>
+                </div>
+                                       
+                  
+                 
+                
+                     
+                  
+                 
+                               </td>
+        </tr>
+    </table>
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="headSubLinksBar">
+                <!-- Sub menu and slogan bar -->
+                
+    
+	<div class="AspNet-Menu-Horizontal" id="blankSublinks_subMenu">
+			<table class="AspNet-Menu">
+				<tr>
+					<td class=" AspNet-Menu-Selected">
+						<a href="/SESeznam.aspx">
+							Seznam SE</a>
+					</td>
+					<td class="AspNet-Menu-Item">
+						<a href="/SESeznam_neto.aspx">
+							Seznam SE v samooskrbi</a>
+					</td>
+					<td class="AspNet-Menu-Item">
+						<a href="/SEkarta.aspx">
+							Karta SE</a>
+					</td>
+				</tr></table>
+
+		</div>
+
+            </td>
+        </tr>
+    </table>
+
+
+
+<!--konec menu-->
+
+
+
+        </div>
+
+          <div id="desno_okno" class="right-window">
+            <h3>Hitre povezave</h3>
+            <hr />
+            <a href="SEvSLO.aspx"><img alt="" src="Styles/images/SEvSLO.png" /></a>&nbsp;&nbsp;
+            <a href="ObsvLJ.aspx"><img alt="" src="Styles/images/sevanje.png" /></a><br /> <br /> 
+            <a href="Proizvodnja.aspx"><img alt="" src="Styles/images/proizvodnja.png" /></a>&nbsp;&nbsp;
+            <a href="Napoved.aspx"><img alt="" src="Styles/images/napoved.png" /></a><br /> <br /> 
+            <a href="SE_FE.aspx"><img alt="" src="Styles/images/SE_LPVO.png" /></a>&nbsp;&nbsp;
+            <a href="CalcObs.aspx"><img alt="" src="Styles/images/sevanje_model.png" /></a><br /> <br /> 
+            <a href="ObsSlo_dan.aspx"><img alt="" src="Styles/images/slosevanje_dan.png" /></a><br /> <br /> 
+
+
+            <h3>Aktualno </h3>
+            <hr />
+            <span id="Label1" class="orange-text">10.5.2019</span>
+            <br />
+             <table id="Table1" class="right-table">
+			<tr>
+				<td style="font-weight:bold;">Pregled PV trga v letu 2018</td>
+			</tr><tr>
+				<td><br/><a href="Aktualno.aspx">Več novic</a></td>
+			</tr>
+		</table>
+            <br />
+         
+            <h3>Dokumenti</h3>
+            <hr />
+            <span id="Label2" class="orange-text">10.5.2019</span>
+            <br />
+             <table id="Table2" class="right-table">
+			<tr>
+				<td style="font-weight:normal;"><img id="Image1" src="Styles/images/pdf25.png" />&nbsp;&nbsp;<a href=http://pv.fe.uni-lj.si/files/Pregled_fotovoltaicnega_trga_v_Sloveniji_2018.pdf>Pregled slovenskega fotovoltaičnega trga v letu 2018</a></td>
+			</tr><tr>
+				<td><br/><a href="Dokumenti.aspx">Več...</a></td>
+			</tr>
+		</table>
+          </div>
+          <div id="main-window">
+             
+    <div id="content-padding">
+ <h1>Sončne elektrarne v Sloveniji </h1>
+  <h4>Stanje na dan 
+      <span id="Vsebina_Label1">8.5.2019</span>
+     </h4>
+
+<p class="greycenter">
+    <select name="ctl00$Vsebina$DDList" id="Vsebina_DDList" style="height:16px;width:66px;">
+			<option selected="selected" value="*">Vsa leta</option>
+			<option value="2004">Pred 2005</option>
+			<option value="2005">2005</option>
+			<option value="2006">2006</option>
+			<option value="2007">2007</option>
+			<option value="2008">2008</option>
+			<option value="2009">2009</option>
+			<option value="2010">2010</option>
+			<option value="2011">2011</option>
+			<option value="2012">2012</option>
+			<option value="2013">2013</option>
+			<option value="2014">2014</option>
+			<option value="2015">2015</option>
+			<option value="2016">2016</option>
+			<option value="2017">2017</option>
+			<option value="2018">2018</option>
+
+		</select>&nbsp;&nbsp;&nbsp; 
+    <select name="ctl00$Vsebina$DDMoc" id="Vsebina_DDMoc">
+			<option selected="selected" value="200000">Vse moči
+    </option>
+			<option value="10">do 10 kWp
+    </option>
+			<option value="50">10 - 50 kWp
+    </option>
+			<option value="100">50 - 100 kWp
+    </option>
+			<option value="500">100 - 500 kWp
+    </option>
+			<option value="100000">nad 500 kWp
+    </option>
+
+		</select>&nbsp;&nbsp;&nbsp; 
+    <select name="ctl00$Vsebina$DDRegija" id="Vsebina_DDRegija">
+			<option value="0">Slovenija
+    </option>
+			<option value="1">Osrednja Slovenija
+    </option>
+			<option value="2">Podravje
+    </option>
+			<option selected="selected" value="3">Celjska
+    </option>
+			<option value="4">Gorenjska
+    </option>
+			<option value="5">Goriška
+    </option>
+			<option value="6">Primorska
+    </option>
+			<option value="8">Dolenjska
+    </option>
+			<option value="9">Prekmurje
+    </option>
+
+		</select>&nbsp;&nbsp;&nbsp;   
+   
+   <input type="submit" name="ctl00$Vsebina$Button2" value="Osveži" id="Vsebina_Button2" style="LEFT: 10px; TOP: 15px" />
+<!--	Easy <a href="#" class="tooltip">Tooltip<span>
+		<img id="Vsebina_Image1" src="Figures/image008.gif" /></span>
+</a> -->
+
+
+
+</p>
+
+         <table id="Vsebina_Table1" rules="rows" class="centralno" border="1" style="border-color:Gray;margin:0px auto">
+			<tr>
+				<td style="background-color:Orange;font-weight:bold;">Ime sončne elektrarne</td><td style="background-color:Orange;font-weight:bold;"></td><td style="background-color:Orange;font-weight:bold;">Kraj</td><td align="center" style="background-color:Orange;font-weight:bold;">Leto postavitve</td><td align="center" style="background-color:Orange;font-weight:bold;">Moč (kW)</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna lektrarna tip SE HTZ05/01_5kW</td><td><a href="#" class="tooltip"><img alt="" border="0" src="Figures/CAMERA_small.gif" /><span><img alt="" src="Figures/SEvSLO/Sonelex.jpg" /></span></a></td><td>Velenje</td><td align="center">2005</td><td align="center">5,25</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Davidov hram</td><td><a href="#" class="tooltip"><img alt="" border="0" src="Figures/CAMERA_small.gif" /><span><img alt="" src="Figures/SEvSLO/Davidov_hram1.jpg" /></span></a></td><td>Ljubno ob Savinji </td><td align="center">2008</td><td align="center">57,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Irman</td><td><a href="#" class="tooltip"><img alt="" border="0" src="Figures/CAMERA_small.gif" /><span><img alt="" src="Figures/SEvSLO/irman.jpg" /></span></a></td><td>Žalec </td><td align="center">2008</td><td align="center">21</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Cajhen</td><td><a href="#" class="tooltip"><img alt="" border="0" src="Figures/CAMERA_small.gif" /><span><img alt="" src="Figures/SEvSLO/Cajhen.jpg" /></span></a></td><td>Laško </td><td align="center">2008</td><td align="center">16,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Diverse APRICUS</td><td><a href="#" class="tooltip"><img alt="" border="0" src="Figures/CAMERA_small.gif" /><span><img alt="" src="Figures/SEvSLO/Apricus.jpg" /></span></a></td><td>Šentjur </td><td align="center">2008</td><td align="center">5,1</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Celjski sejem</td><td><a href="#" class="tooltip"><img alt="" border="0" src="Figures/CAMERA_small.gif" /><span><img alt="" src="Figures/SEvSLO/CE-sejem.jpg" /></span></a></td><td>Celje</td><td align="center">2008</td><td align="center">19,18</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Črešnova</td><td></td><td>Zreče </td><td align="center">2008</td><td align="center">1,12</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna ELPRO - KRIŽNIČ</td><td><a href="#" class="tooltip"><img alt="" border="0" src="Figures/CAMERA_small.gif" /><span><img alt="" src="Figures/SEvSLO/Elpro.jpg" /></span></a></td><td>Slovenske Konjice </td><td align="center">2008</td><td align="center">40</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna</td><td><a href="#" class="tooltip"><img alt="" border="0" src="Figures/CAMERA_small.gif" /><span><img alt="" src="Figures/SEvSLO/speh.jpg" /></span></a></td><td>Ljubno ob Savinji </td><td align="center">2008</td><td align="center">12,24</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Tratnik</td><td><a href="#" class="tooltip"><img alt="" border="0" src="Figures/CAMERA_small.gif" /><span><img alt="" src="Figures/SEvSLO/Tratnik.jpg" /></span></a></td><td>Gornji Grad </td><td align="center">2008</td><td align="center">12,35</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Energetika Vransko</td><td><a href="#" class="tooltip"><img alt="" border="0" src="Figures/CAMERA_small.gif" /><span><img alt="" src="Figures/SEvSLO/EVransko.jpg" /></span></a></td><td>Vransko </td><td align="center">2009</td><td align="center">34,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kovač</td><td></td><td>Škofja vas </td><td align="center">2009</td><td align="center">11,8</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna MSE ELPRO-Križnič 2</td><td></td><td>Slovenske Konjice </td><td align="center">2009</td><td align="center">49,02</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna SE1, MFE EMO</td><td></td><td>Celje </td><td align="center">2009</td><td align="center">282</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna-energija</td><td></td><td>Polzela </td><td align="center">2009</td><td align="center">65</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Dines Šešče</td><td></td><td>Prebold </td><td align="center">2009</td><td align="center">6,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Matjaž</td><td></td><td>Gornji Grad </td><td align="center">2009</td><td align="center">15,9</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna Cizej</td><td></td><td>Braslovče </td><td align="center">2009</td><td align="center">47,38</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Celjski sejem II</td><td></td><td>Celje </td><td align="center">2009</td><td align="center">212,23</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna Pfeifer</td><td></td><td>Nazarje </td><td align="center">2009</td><td align="center">65,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kunej Gorjane</td><td></td><td>Podsreda </td><td align="center">2009</td><td align="center">110</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SONEVAT</td><td></td><td>Šmartno ob Dreti </td><td align="center">2009</td><td align="center">47,16</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Absorbis 1</td><td></td><td>Celje </td><td align="center">2009</td><td align="center">20,25</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Maček</td><td></td><td>Podčetrtek </td><td align="center">2009</td><td align="center">11,55</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Celjski sejem III</td><td></td><td>Celje </td><td align="center">2009</td><td align="center">338,9</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna Ljubno II</td><td></td><td>Ljubno ob Savinji </td><td align="center">2009</td><td align="center">44,1</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Davidov hram Arnovski gozd</td><td><a href="#" class="tooltip"><img alt="" border="0" src="Figures/CAMERA_small.gif" /><span><img alt="" src="Figures/SEvSLO/Davidov_hram2.jpg" /></span></a></td><td>Petrovče</td><td align="center">2009</td><td align="center">222,53</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Rakun</td><td></td><td>Polzela </td><td align="center">2009</td><td align="center">36,8</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna na strehi poslovnega objekta tip SEHTZ 243.3N3E00</td><td></td><td>Šmarje pri Jelšah </td><td align="center">2009</td><td align="center">243,3</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna tip SE HTZ 08/27-42,11kWp</td><td></td><td>Braslovče </td><td align="center">2009</td><td align="center">41,67</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna tip SE HTZ07/17 1,935kW</td><td></td><td>Kalobje </td><td align="center">2009</td><td align="center">1,94</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Bukovje</td><td></td><td>Ljubno ob Savinji </td><td align="center">2009</td><td align="center">29,26</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EC SRCE</td><td></td><td>Celje </td><td align="center">2009</td><td align="center">13,4</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna</td><td></td><td>Štore </td><td align="center">2009</td><td align="center">37,94</td>
+			</tr><tr>
+				<td style="text-align:left;">SE 2008</td><td></td><td>Prebold </td><td align="center">2009</td><td align="center">49,7</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna Pfeifer bar</td><td></td><td>Nazarje </td><td align="center">2009</td><td align="center">70,57</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna tip SE HTZ 24.0N3E00, MFE Mlinar II</td><td></td><td>Žalec </td><td align="center">2009</td><td align="center">24</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna tip HTZ 43.8N3E00, MFE Mlinar III</td><td></td><td>Žalec </td><td align="center">2009</td><td align="center">44,43</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna Skok III</td><td></td><td>Nazarje </td><td align="center">2009</td><td align="center">70,57</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Gerčer</td><td></td><td>Laško </td><td align="center">2009</td><td align="center">27,96</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Košnica</td><td></td><td>Celje </td><td align="center">2009</td><td align="center">9,66</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Mlinar</td><td></td><td>Žalec </td><td align="center">2009</td><td align="center">1,5</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna tip SE HTZ 14.0N3E00</td><td></td><td>Velenje</td><td align="center">2009</td><td align="center">14</td>
+			</tr><tr>
+				<td style="text-align:left;">MALA FOTONAPETOSTNA ELEKTRARNA MFE ESOTECH </td><td></td><td>Velenje </td><td align="center">2010</td><td align="center">380</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MAROVT OSTROŽNO </td><td></td><td>Celje </td><td align="center">2010</td><td align="center">11,07</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE BAH </td><td></td><td>Loka pri Žusmu </td><td align="center">2010</td><td align="center">539,81</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE OŠ Vojnik-Trg </td><td></td><td>Vojnik </td><td align="center">2010</td><td align="center">144</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE GROBIN </td><td></td><td>Lesično </td><td align="center">2010</td><td align="center">493,21</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE BS Tepanje Z-I </td><td></td><td>Slovenske Konjice </td><td align="center">2010</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE BS Tepanje V-II </td><td></td><td>Slovenske Konjice </td><td align="center">2010</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna na strehi stanovanjskega objekta tip SE HTZ 15.7N3E00 </td><td></td><td>Velenje </td><td align="center">2010</td><td align="center">15,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Mlakar Spodnja Rečica </td><td></td><td>Laško </td><td align="center">2010</td><td align="center">21,16</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Intercom</td><td></td><td>Teharje </td><td align="center">2010</td><td align="center">45,86</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KEA ŠENTJUR </td><td></td><td>Šentjur </td><td align="center">2010</td><td align="center">43,24</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KEA PODČETRTEK </td><td></td><td>Podčetrtek </td><td align="center">2010</td><td align="center">42,13</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EL-SM 2</td><td></td><td>Lesično</td><td align="center">2010</td><td align="center">141,12</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MASTNAK 2</td><td></td><td>Šentjur</td><td align="center">2010</td><td align="center">48,88</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna na strehi poslovnega objekta tip SE HTZ 49.9N3E00 (MFE Jager Rogaška Slatina) </td><td></td><td>Rogaška Slatina </td><td align="center">2010</td><td align="center">49,91</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna Pakman </td><td></td><td>Celje </td><td align="center">2010</td><td align="center">49,77</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MO VELENJE </td><td></td><td>Velenje </td><td align="center">2010</td><td align="center">18,63</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE NUNČIČ FRANC S.P. </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2010</td><td align="center">102</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ZAKŠEK PLANINA</td><td></td><td>Planina pri Sevnici </td><td align="center">2010</td><td align="center">49,95</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE C&P</td><td></td><td>Rogatec </td><td align="center">2010</td><td align="center">46,08</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Slapnik Vologa</td><td></td><td>Vransko</td><td align="center">2010</td><td align="center">23,04</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE OŠ LIVADA</td><td></td><td>Velenje </td><td align="center">2010</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Telovadnica Strmec</td><td></td><td>Nova Cerkev </td><td align="center">2010</td><td align="center">47</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VOJKO</td><td></td><td>Velenje </td><td align="center">2010</td><td align="center">37,6</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE PFEIFER 2 AVTOPRALNICA</td><td></td><td>Nazarje</td><td align="center">2010</td><td align="center">44,64</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE SKOK 2 APARTMAJI</td><td></td><td>Mozirje</td><td align="center">2010</td><td align="center">29,93</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ŠTAJNER</td><td></td><td>Žalec </td><td align="center">2010</td><td align="center">13,2</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro sončna elektrarna Gigasport 5 - Obnovljiv d.o.o.</td><td></td><td>Celje</td><td align="center">2010</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna Giga Sport 3 </td><td></td><td>Celje </td><td align="center">2010</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">MIKRO FOTONAPETOSTNA ELEKTRARNA MFE PUŠNER</td><td></td><td>Nazarje </td><td align="center">2010</td><td align="center">14,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Oder </td><td></td><td>Škofja vas </td><td align="center">2010</td><td align="center">35,42</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna MFE TRATNIK 1 - Sledilnika</td><td></td><td>GornjiGrad</td><td align="center">2010</td><td align="center">7,74</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Buče</td><td></td><td>Buče</td><td align="center">2010</td><td align="center">471</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ABC Kritine 2 </td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2010</td><td align="center">48,64</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna na strehi objekta - hotela tip SE HTZ 39.7N3E00 (MFE Golte) </td><td></td><td>Mozirje</td><td align="center">2010</td><td align="center">39,7</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ŠANTEJ </td><td></td><td>Planina pri Sevnici </td><td align="center">2010</td><td align="center">338,1</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Marguč </td><td></td><td>Loče</td><td align="center">2010</td><td align="center">17,94</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE PFEIFER 3 VRATARNICA - INTERGRIRANA </td><td></td><td>Nazarje</td><td align="center">2010</td><td align="center">49,14</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MARJETA</td><td></td><td>Ponikva </td><td align="center">2010</td><td align="center">41,71</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna Giga Sport 2 </td><td></td><td>Celje </td><td align="center">2010</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE PGE CELJE</td><td></td><td>Celje </td><td align="center">2010</td><td align="center">45,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EMO UPRAVA 1 </td><td></td><td>Celje </td><td align="center">2010</td><td align="center">37,44</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Simer Senčila </td><td></td><td>Celje </td><td align="center">2010</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MODRA SONČNA ELEKTRARNA GIMNAZIJA VELENJE </td><td></td><td>Velenje </td><td align="center">2010</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Steklar </td><td></td><td>Celje </td><td align="center">2010</td><td align="center">34,96</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ŠMARTNO OB DRETI </td><td></td><td>Šmartno ob Dreti </td><td align="center">2010</td><td align="center">24,25</td>
+			</tr><tr>
+				<td style="text-align:left;">FE Slovenske Konjice</td><td></td><td>Slovenske Konjice</td><td align="center">2010</td><td align="center">24,24</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE FRANKOVIČ, KAVČE</td><td></td><td>Velenje</td><td align="center">2010</td><td align="center">10,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kunej Gorjane 2</td><td></td><td>Podsreda</td><td align="center">2010</td><td align="center">19,44</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE LESNINA 1</td><td></td><td>Petrovče</td><td align="center">2010</td><td align="center">49,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HERMI 1</td><td></td><td>Celje</td><td align="center">2010</td><td align="center">31,68</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna MFE SICO </td><td></td><td>Petrovče </td><td align="center">2010</td><td align="center">184,95</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE OŠ NAZARJE </td><td></td><td>Nazarje </td><td align="center">2010</td><td align="center">127,4</td>
+			</tr><tr>
+				<td style="text-align:left;">mFE Skamen </td><td></td><td>Nova Cerkev </td><td align="center">2010</td><td align="center">8,82</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna Mlače 25 </td><td></td><td>Loče </td><td align="center">2010</td><td align="center">40,32</td>
+			</tr><tr>
+				<td style="text-align:left;">FE Filipič </td><td></td><td>Laško </td><td align="center">2010</td><td align="center">6</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Moličnik-1 </td><td></td><td>Luče </td><td align="center">2010</td><td align="center">24,38</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Reiter </td><td></td><td>Rečica ob Savinji </td><td align="center">2010</td><td align="center">17,85</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ČEPIN </td><td></td><td>Buče </td><td align="center">2010</td><td align="center">17,71</td>
+			</tr><tr>
+				<td style="text-align:left;">Solarna elektrarna Cybrotech</td><td></td><td>Petrovče</td><td align="center">2010</td><td align="center">32,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KODRET 2</td><td></td><td>Polzela</td><td align="center">2010</td><td align="center">49,74</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Jutranja zarja</td><td></td><td>Celje </td><td align="center">2010</td><td align="center">49,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MSP - Šoštanj - mikro fotonapetostna elektrarna</td><td></td><td>Šoštanj </td><td align="center">2010</td><td align="center">49,89</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna MFE Košec 2- talna postavitev</td><td></td><td>Polzela </td><td align="center">2010</td><td align="center">30,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VI-JA GOTOVLJE</td><td></td><td>Žalec </td><td align="center">2010</td><td align="center">41</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna na strehi poslovnega objekta tip SEHTZ 49.9N3E00</td><td></td><td>Šmarje pri Jelšah </td><td align="center">2010</td><td align="center">49,9</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna 4 STENE</td><td></td><td>Šmartno ob Paki </td><td align="center">2010</td><td align="center">9,43</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE PFEIFER POLZELA</td><td></td><td>Polzela </td><td align="center">2010</td><td align="center">14,43</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MASTNAK IVAN</td><td></td><td>Šentjur </td><td align="center">2010</td><td align="center">49,95</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE NIVO EKO VRBJE</td><td></td><td>Žalec </td><td align="center">2010</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Beli oblak</td><td></td><td>Celje </td><td align="center">2010</td><td align="center">49,2</td>
+			</tr><tr>
+				<td style="text-align:left;">Fotonapetostna elektrarna Satler</td><td></td><td>Loče </td><td align="center">2010</td><td align="center">42,24</td>
+			</tr><tr>
+				<td style="text-align:left;">MSE ELPOS</td><td></td><td>Loče </td><td align="center">2010</td><td align="center">8,6</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Povalej</td><td></td><td>Rogaška Slatina </td><td align="center">2010</td><td align="center">21</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna Giga Sport 4</td><td></td><td>Celje</td><td align="center">2010</td><td align="center">49,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE I.P.C.-Šoštanj-mikro fotonapetostna elektrarna</td><td></td><td>Šoštanj </td><td align="center">2010</td><td align="center">49,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kovač Ljubija</td><td></td><td>Mozirje</td><td align="center">2010</td><td align="center">29,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EC LAVA</td><td></td><td>Celje </td><td align="center">2010</td><td align="center">49,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Modro nebo</td><td></td><td>Celje </td><td align="center">2010</td><td align="center">105,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE OŠ GUSTAVA ŠILIHA</td><td></td><td>Velenje </td><td align="center">2010</td><td align="center">45,6</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna Koplast Eksturzija</td><td></td><td>Slovenske Konjice </td><td align="center">2010</td><td align="center">49,77</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Brilej Gubno</td><td></td><td>Lesično </td><td align="center">2010</td><td align="center">25,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ZIP</td><td></td><td>Bistrica ob Sotli </td><td align="center">2010</td><td align="center">103,79</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna MFE Košec 1- integrirana v streho</td><td></td><td>Polzela </td><td align="center">2010</td><td align="center">8,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE INDA TEHARJE</td><td></td><td>Celje</td><td align="center">2010</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Bukovje 2</td><td></td><td>Ljubno ob Savinji </td><td align="center">2010</td><td align="center">69</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Toplišek</td><td></td><td>Lesično </td><td align="center">2010</td><td align="center">47,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE GAJŠEK</td><td></td><td>Ponikva </td><td align="center">2010</td><td align="center">44,13</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE BUČER</td><td></td><td>Ponikva </td><td align="center">2010</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE I.P.C. - PRS - mikro fotonapetostna elektrarna</td><td></td><td>Velenje </td><td align="center">2010</td><td align="center">49,54</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE NIVO STROJ KOVINA VRBJE</td><td></td><td>Žalec </td><td align="center">2010</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE NIVO VRBJE</td><td></td><td>Žalec </td><td align="center">2010</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE NAVIS - mikro fotonapetostna elektrarna</td><td></td><td>Velenje </td><td align="center">2010</td><td align="center">49,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE-ŽILAVEC</td><td></td><td>Šmarje pri Jelšah </td><td align="center">2010</td><td align="center">12,15</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna Ramšak</td><td></td><td>Braslovče </td><td align="center">2010</td><td align="center">22,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Plevčak Šmarje</td><td></td><td>Šmalje pri Jelšah </td><td align="center">2010</td><td align="center">21,96</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kopušar</td><td></td><td>Luče </td><td align="center">2010</td><td align="center">12,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE APRICUS PARIDOL</td><td></td><td>Prevorje </td><td align="center">2010</td><td align="center">49,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Janez Vipotnik s.p.</td><td></td><td>Žalec </td><td align="center">2010</td><td align="center">10</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SAVSKI</td><td></td><td>Podplat </td><td align="center">2010</td><td align="center">49,95</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Simer Ključavničarstvo</td><td></td><td>Celje </td><td align="center">2010</td><td align="center">23,46</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Solar</td><td></td><td>Ljubno ob Savinji </td><td align="center">2010</td><td align="center">12,19</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE ČRNELIČ</td><td></td><td>Grobelno</td><td align="center">2010</td><td align="center">13,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Jero</td><td></td><td>Nazarje</td><td align="center">2010</td><td align="center">26,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kotnik</td><td></td><td>Mozirje </td><td align="center">2010</td><td align="center">33</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Mirosan</td><td></td><td>Petrovče </td><td align="center">2010</td><td align="center">236,13</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE ACMAN</td><td></td><td>Mozirje </td><td align="center">2010</td><td align="center">14,1</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Lipnik</td><td></td><td>Velenje</td><td align="center">2010</td><td align="center">17,15</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Zidartrans</td><td></td><td>Lesično </td><td align="center">2010</td><td align="center">86,94</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Tauses</td><td></td><td>Laško </td><td align="center">2010</td><td align="center">48,28</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Žibret</td><td></td><td>Lesično </td><td align="center">2010</td><td align="center">10,12</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Simer 1</td><td></td><td>Celje</td><td align="center">2010</td><td align="center">46,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Pogelšek Koretno</td><td></td><td>Šmarje pri Jelšah </td><td align="center">2010</td><td align="center">47</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Mesninček</td><td></td><td>Celje </td><td align="center">2010</td><td align="center">134,16</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna Giga Sport 1</td><td></td><td>Celje </td><td align="center">2010</td><td align="center">49,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ABC Podlog</td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2010</td><td align="center">30</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Hohnjec Martin s.p.</td><td></td><td>Podčetrtek </td><td align="center">2010</td><td align="center">19,95</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna MFE Klemen</td><td></td><td>Zreče </td><td align="center">2010</td><td align="center">6,12</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Plahuta</td><td></td><td>Šmarje pri Jelšah </td><td align="center">2010</td><td align="center">8,25</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Karlovšek</td><td></td><td>Celje </td><td align="center">2010</td><td align="center">7,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Selan Velenje</td><td></td><td>Velenje </td><td align="center">2010</td><td align="center">13,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE TEPEŠ Grobelno</td><td></td><td>Grobelno </td><td align="center">2010</td><td align="center">4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Celjske mesnine</td><td></td><td>Celje </td><td align="center">2010</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MAKSI </td><td></td><td>Ponikva </td><td align="center">2011</td><td align="center">47,3</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KEA ZREČE </td><td></td><td>Zreče </td><td align="center">2011</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ZORIN PEČICA </td><td></td><td>Podplat </td><td align="center">2011</td><td align="center">21,02</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VRBEK 2 </td><td></td><td>Šmarje pri Jelšah</td><td align="center">2011</td><td align="center">20,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE PIŠEK 3 - sončna elektrarna na strehah poslovnih objektov Pišek-Vitli KRPAN </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2011</td><td align="center">153,6</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HOFER ROGAŠKA SLATINA </td><td></td><td>Rogaška Slatina </td><td align="center">2011</td><td align="center">66,28</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE OŠ POLZELA </td><td></td><td>Polzela </td><td align="center">2011</td><td align="center">180</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HERMI 2 </td><td></td><td>Celje </td><td align="center">2011</td><td align="center">35,77</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HOFER ŽALEC </td><td></td><td>Žalec </td><td align="center">2011</td><td align="center">66,28</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HOFER CELJE TEHARJE </td><td></td><td>Teharje </td><td align="center">2011</td><td align="center">84,67</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VAJS </td><td></td><td>Polzela</td><td align="center">2011</td><td align="center">4,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HOFER VELENJE SELO </td><td></td><td>Velenje </td><td align="center">2011</td><td align="center">66,28</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HRUŠOVAR 2 </td><td></td><td>Braslovče</td><td align="center">2011</td><td align="center">49,95</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HOFER VELENJE PARTIZANSKA </td><td></td><td>Velenje </td><td align="center">2011</td><td align="center">66,28</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ALTEREN 1 </td><td></td><td>Slovenske Konjice </td><td align="center">2011</td><td align="center">11,12</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Sintal Celje </td><td></td><td>Celje </td><td align="center">2011</td><td align="center">128,57</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE AVTOTEHNIKA CELJE </td><td></td><td>Celje </td><td align="center">2011</td><td align="center">49,95</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE BUČER 3 </td><td></td><td>Ponikva </td><td align="center">2011</td><td align="center">48,46</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HOFER MOZIRJE </td><td></td><td>Mozirje </td><td align="center">2011</td><td align="center">66,28</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HOTEL DOBRAVA v ZREČAH </td><td></td><td>Zreče </td><td align="center">2011</td><td align="center">33,12</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KOZMUS </td><td></td><td>Jurklošter</td><td align="center">2011</td><td align="center">45,76</td>
+			</tr><tr>
+				<td style="text-align:left;">SONČNA ELEKTRARNA BRDO </td><td></td><td>Slovenske Konjice </td><td align="center">2011</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">SE MIC pasivna hiša </td><td></td><td>Velenje </td><td align="center">2011</td><td align="center">19</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KOVINAR 49,92 kW </td><td></td><td>Celje </td><td align="center">2011</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE JO-JO </td><td></td><td>Podčetrtek </td><td align="center">2011</td><td align="center">10,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE BRATUŠA </td><td></td><td>Kozje </td><td align="center">2011</td><td align="center">12</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EC Šempeter 2 </td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2011</td><td align="center">42</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ROK </td><td></td><td>Prebold </td><td align="center">2011</td><td align="center">17</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Skornšek Mihael </td><td></td><td>Šoštanj </td><td align="center">2011</td><td align="center">8,97</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Likeb-2 </td><td></td><td>Polzela</td><td align="center">2011</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EC Šempeter 1 </td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2011</td><td align="center">42</td>
+			</tr><tr>
+				<td style="text-align:left;">SONČNA ELEKTRARNA BISOL - ŠPORTNA DVORANA OŠ SK </td><td></td><td>Slovenske Konjice </td><td align="center">2011</td><td align="center">240</td>
+			</tr><tr>
+				<td style="text-align:left;">Fotonapetostna elektrarna MFE H-mont-Ceste </td><td></td><td>Rogaška Slatina </td><td align="center">2011</td><td align="center">702</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Lampret, Šoštanj - sončna elektrarna na strehi bivalnega objekta </td><td></td><td>Šoštanj </td><td align="center">2011</td><td align="center">8,25</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Premogovnik Velenje - sončna elektrarna na strehi poslovnih objektov </td><td></td><td>Velenje </td><td align="center">2011</td><td align="center">808,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ZAKOŠEK </td><td></td><td>Lesično </td><td align="center">2011</td><td align="center">25,25</td>
+			</tr><tr>
+				<td style="text-align:left;">UFE PAVLOVIČ </td><td></td><td>Ljubno ob Savinji </td><td align="center">2011</td><td align="center">11,19</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE PARSON </td><td></td><td>Vojnik </td><td align="center">2011</td><td align="center">44,3</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE JEZERNIK - INTEGRIRANA ELEKTRARNA </td><td></td><td>Velenje </td><td align="center">2011</td><td align="center">8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MAČEK 2 ŠENTJUR </td><td></td><td>Šentjur </td><td align="center">2011</td><td align="center">26,18</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Plank </td><td></td><td>Štore </td><td align="center">2011</td><td align="center">12</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Lipa, Velenje - sončna elektrarna na strehi bivalnega objekta </td><td></td><td>Velenje </td><td align="center">2011</td><td align="center">13,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VEHOVAR </td><td></td><td>Pristava pri Mestinju </td><td align="center">2011</td><td align="center">17,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Blagotinšek, Andraž - sončna elektrarna na strehi bivalnega objekta </td><td></td><td>Polzela </td><td align="center">2011</td><td align="center">10,13</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HEIDI </td><td></td><td>Podčetrtek </td><td align="center">2011</td><td align="center">23,25</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE PETRIN </td><td></td><td>Mozirje </td><td align="center">2011</td><td align="center">17</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Nepremičnine </td><td></td><td>Celje </td><td align="center">2011</td><td align="center">37,8</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Likeb </td><td></td><td>Polzela</td><td align="center">2011</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE JAGROS MESTINJE 1 </td><td></td><td>Podplat </td><td align="center">2011</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE JAGROS MESTINJE 3 </td><td></td><td>Podplat </td><td align="center">2011</td><td align="center">48,26</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EKODELI </td><td></td><td>Lesično </td><td align="center">2011</td><td align="center">18</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ELLATRON ZADRUŽNIK </td><td></td><td>Šmalje pri Jelšah </td><td align="center">2011</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ELLATRON G.D. ŠENTVID </td><td></td><td>Grobelno </td><td align="center">2011</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE JAGROS MESTINJE 2 </td><td></td><td>Podplat </td><td align="center">2011</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE PUŠNER </td><td></td><td>Nazarje </td><td align="center">2011</td><td align="center">14,7</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE JOŽE KUNEJ PODSREDA </td><td></td><td>Podsreda </td><td align="center">2011</td><td align="center">17</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ROTOVNIK LIPJE </td><td></td><td>elenje</td><td align="center">2011</td><td align="center">15,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MAČEK 1 ŠENTJUR </td><td></td><td>Šentjur </td><td align="center">2011</td><td align="center">39,6</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Aradon </td><td></td><td>Celje</td><td align="center">2011</td><td align="center">9,89</td>
+			</tr><tr>
+				<td style="text-align:left;">Fotovoltaična elektrarna Ekopak Šentjur 49,68 kWp</td><td></td><td>Šentjur</td><td align="center">2011</td><td align="center">45</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Šmid Šentjur</td><td></td><td>Šentjur</td><td align="center">2011</td><td align="center">13,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EKOD 1</td><td></td><td>Buče</td><td align="center">2011</td><td align="center">47,95</td>
+			</tr><tr>
+				<td style="text-align:left;">Solarna elektrarna MFE Pečica</td><td></td><td>Podplat</td><td align="center">2011</td><td align="center">379,43</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Završnik</td><td></td><td>Šoštanj</td><td align="center">2011</td><td align="center">21,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE TOMLES</td><td></td><td>Šentjur</td><td align="center">2011</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Zlatorog</td><td></td><td>Celje</td><td align="center">2011</td><td align="center">520</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE - OŠ PREBOLD</td><td></td><td>Prebold</td><td align="center">2011</td><td align="center">217</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HALA B </td><td></td><td>Celje</td><td align="center">2011</td><td align="center">80</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HALA A </td><td></td><td>Celje</td><td align="center">2011</td><td align="center">214,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MEDVED </td><td></td><td>Laško</td><td align="center">2011</td><td align="center">8,64</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Bulk Bočna</td><td></td><td>Gornji Grad</td><td align="center">2011</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Bisol II </td><td></td><td>Prebold</td><td align="center">2011</td><td align="center">216</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KD Loče Arhsol </td><td></td><td>Loče</td><td align="center">2011</td><td align="center">27,14</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Gozdič </td><td></td><td>Loče</td><td align="center">2011</td><td align="center">24,84</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE REHAR ZAL. GORICA </td><td></td><td>Petrovče </td><td align="center">2011</td><td align="center">30</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ŠOLINC </td><td></td><td>Braslovče </td><td align="center">2011</td><td align="center">42,94</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VRBEK </td><td></td><td>Šmarje pri Jelšah</td><td align="center">2011</td><td align="center">21,1</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE OŠ ŠMARJE PRI JELŠAH </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2011</td><td align="center">248</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE OŠ ŠMARTNO OB PAKI </td><td></td><td>Šmartno ob Paki</td><td align="center">2011</td><td align="center">116,6</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EUROBAS </td><td></td><td>Grobelno</td><td align="center">2011</td><td align="center">16,1</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Ellatron gasilski dom Imeno </td><td></td><td>Podčetrtek</td><td align="center">2011</td><td align="center">45,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ŠMARJE PRISTAVA </td><td></td><td>Pristava pri Mestinju</td><td align="center">2011</td><td align="center">14,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE LETONJA </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2011</td><td align="center">22</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ŠLANDER 1 </td><td></td><td>Celje </td><td align="center">2011</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HRUŠOVAR </td><td></td><td>Braslovče </td><td align="center">2011</td><td align="center">49,88</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna Bisol-OŠ Dravinja </td><td></td><td>Slovenske Konjice</td><td align="center">2011</td><td align="center">114</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE GLAVNIK </td><td></td><td>Polzela </td><td align="center">2011</td><td align="center">44,77</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ENERGIJA Županc </td><td></td><td>Šentjur </td><td align="center">2011</td><td align="center">31,16</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Vidović </td><td></td><td>Velenje </td><td align="center">2011</td><td align="center">19,06</td>
+			</tr><tr>
+				<td style="text-align:left;">MSE Kunej </td><td></td><td>Podsreda </td><td align="center">2011</td><td align="center">36,26</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE GODLER </td><td></td><td>Buče</td><td align="center">2011</td><td align="center">47,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VOLK </td><td></td><td>Rečica ob Savinji </td><td align="center">2011</td><td align="center">11</td>
+			</tr><tr>
+				<td style="text-align:left;">UFE Kopušar 2 </td><td></td><td>Luče</td><td align="center">2011</td><td align="center">7,31</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Emo-Orodjarna </td><td></td><td>Celje </td><td align="center">2011</td><td align="center">249</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VPS JECL </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2011</td><td align="center">13,5</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE POIŠKRUH </td><td></td><td>Gornji Grad </td><td align="center">2011</td><td align="center">27,69</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE TOP-FIT </td><td></td><td>Celje </td><td align="center">2011</td><td align="center">48,51</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SOLARMONT </td><td></td><td>Laško </td><td align="center">2011</td><td align="center">11</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE BIZJAK </td><td></td><td>Polzela</td><td align="center">2011</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VARD </td><td></td><td>Celje </td><td align="center">2011</td><td align="center">11</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE APRICUS KOŠNICA </td><td></td><td>Celje </td><td align="center">2011</td><td align="center">22</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna Pečovnik </td><td></td><td>Zreče</td><td align="center">2011</td><td align="center">7,94</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE-MEBI PODLOG </td><td></td><td>Šempeter v Savinjski dolini</td><td align="center">2011</td><td align="center">45</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Iva </td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2011</td><td align="center">13,32</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Gaber Lipje </td><td></td><td>Velenje </td><td align="center">2011</td><td align="center">36,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MEŽA </td><td></td><td>Velenje </td><td align="center">2011</td><td align="center">20,31</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MERKSCHA 1 </td><td></td><td>Celje </td><td align="center">2011</td><td align="center">450,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MERKSCHA 2 </td><td></td><td>Celje </td><td align="center">2011</td><td align="center">96</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE ACMAN II </td><td></td><td>Mozirje </td><td align="center">2011</td><td align="center">9,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kunej 2 </td><td></td><td>Podsreda </td><td align="center">2011</td><td align="center">29</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE LIPUŠ </td><td></td><td>Zalec </td><td align="center">2011</td><td align="center">8,58</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MEBI 2 PODLOG </td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2011</td><td align="center">45</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KOSTANJ </td><td></td><td>Petrovče </td><td align="center">2011</td><td align="center">47,36</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ROZENSTEIN </td><td></td><td>Ljubno ob Savinji </td><td align="center">2011</td><td align="center">22,79</td>
+			</tr><tr>
+				<td style="text-align:left;">Integrirana fotovoltaična elektrarna MFE Rihter </td><td></td><td>Gornji Grad </td><td align="center">2011</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Korbar </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna - Koren Simona </td><td></td><td>Loče</td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Turna 2 - mala fotonapetostna elektrarna </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">308,79</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Gorjup </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">9,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Rojnik </td><td></td><td>Braslovče </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE PH SOLAR SPJ 1 </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">895</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna - Koren Peter </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kovačič Šmarje </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MAKSIM - mala fotonapetostna elektrarna </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">385,58</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Grobelšek </td><td></td><td>Podčetrtek </td><td align="center">2012</td><td align="center">31,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SONCE PLUS </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">22</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE INPOS CELJE - mala fotonapetostna elektrarna </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">494,91</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Ring 2, Velenje - sončna elektrarna na strehi stanovanjske hiše </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">17,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE OŠ TABOR </td><td></td><td>Tabor </td><td align="center">2012</td><td align="center">96,7</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Martinšek </td><td></td><td>Slovenske Konjice </td><td align="center">2012</td><td align="center">11,28</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HI-TECH </td><td></td><td>Vojnik </td><td align="center">2012</td><td align="center">17</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE RAMAX </td><td></td><td>Slovenske Konjice </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Jamnik </td><td></td><td>Tabor </td><td align="center">2012</td><td align="center">21,25</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Terglav </td><td></td><td>Šempeterv Savinjski dolini </td><td align="center">2012</td><td align="center">93,86</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Gajster </td><td></td><td>Rogaška Slatina </td><td align="center">2012</td><td align="center">15</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MATEJA </td><td></td><td>Podčetrtek </td><td align="center">2012</td><td align="center">6,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Pogorevc, Lovče - Sončna elektrarna na strehi stanovanjske hiše v Andražu </td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">13,75</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna ŠMID</td><td></td><td>Loče </td><td align="center">2012</td><td align="center">40,04</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna ELIZE II</td><td></td><td>Loče </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna ELIZE III</td><td></td><td>Loče </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Vrbek </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">10,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE LEBER - mala fotonapetostna elektrarna </td><td></td><td>Vojnik </td><td align="center">2012</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Hribar 01 </td><td></td><td>Žalec </td><td align="center">2012</td><td align="center">12,96</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Dobovičnik, Kavče - sončna elektrarna na strehi bivalnega objekta </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">9,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE B&G AVTOMOBILI </td><td></td><td>Šentjur </td><td align="center">2012</td><td align="center">49,78</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Melavc </td><td></td><td>Nazarje </td><td align="center">2012</td><td align="center">225,6</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Pilko </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">11,76</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE INPOS LAVA - mala fotonapetostna elektrarna </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">100,11</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Klinar </td><td></td><td>Štore</td><td align="center">2012</td><td align="center">49,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Žogan </td><td></td><td>Šmarje pri Jelšah</td><td align="center">2012</td><td align="center">41,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Stagoj </td><td></td><td>Vojnik </td><td align="center">2012</td><td align="center">14,7</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ULČNIK IMENO </td><td></td><td>Podčetrtek </td><td align="center">2012</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE BEVC </td><td></td><td>Podčetrtek </td><td align="center">2012</td><td align="center">22,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE PRVA </td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">49,35</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Vodušek </td><td></td><td>Rogaška Slatina </td><td align="center">2012</td><td align="center">28,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE INTEREVROPA CELJE VZHOD IN ENTEREVVROPA CELJE ZAHOD </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">650,66</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE DREV 49,88 kWp </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">49,88</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE INTEREUROPA CELJE HALA B. IN C1. </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">900</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna MFE FUTURE 2 </td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2012</td><td align="center">20,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ELLATRON TURK </td><td></td><td>Podčetrtek </td><td align="center">2012</td><td align="center">25</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Suhodolnik </td><td></td><td>Luče </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE TRUPAJ VIRŠTANJ </td><td></td><td>Podčetrtek </td><td align="center">2012</td><td align="center">38,25</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE JAGROS MESTINJE 4 </td><td></td><td>Podplat </td><td align="center">2012</td><td align="center">47,77</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE GBK KAŠČA </td><td></td><td>Šmalje pri Jelšah </td><td align="center">2012</td><td align="center">28,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Jurjevec </td><td></td><td>Nazarje </td><td align="center">2012</td><td align="center">94,08</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Ogorevc </td><td></td><td>Rogaška Slatina </td><td align="center">2012</td><td align="center">15,44</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE FARMIN </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">232,89</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE OŠ Šoštanj </td><td></td><td>Šoštanj </td><td align="center">2012</td><td align="center">196</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Gorenje PPA - mala fotonapetostna elektrarna </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">405,61</td>
+			</tr><tr>
+				<td style="text-align:left;">GERSOL, pridobivanje in prodaja solarne energije,d.o.o. </td><td></td><td>Pristava pri Mestinju </td><td align="center">2012</td><td align="center">48</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Geršak 1 </td><td></td><td>Pristava pri Mestinju </td><td align="center">2012</td><td align="center">48</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE OLUP </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">9,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Studio BB </td><td></td><td>Dobje pri Planini </td><td align="center">2012</td><td align="center">28,56</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE OŠ TRNAVA </td><td></td><td>Gomilsko </td><td align="center">2012</td><td align="center">43,7</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE DEKO LOKA </td><td></td><td>Loka pri Žusmu </td><td align="center">2012</td><td align="center">628</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Grliče Povalej </td><td></td><td>Podplat </td><td align="center">2012</td><td align="center">15</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ROTOVNIK </td><td></td><td>Žalec </td><td align="center">2012</td><td align="center">24</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MERKSCHA 3 </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">249,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MERKSCHA 4 </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VEPLAS Velenje </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">451,78</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Slemenšek - 49,98 kWp </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna MFE FUTURE 1 </td><td></td><td>Prebold </td><td align="center">2012</td><td align="center">48,96</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KOPLAST II </td><td></td><td>Slovenske Konjice </td><td align="center">2012</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Brečko </td><td></td><td>Šentjur </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kunst 1 </td><td></td><td>Buče </td><td align="center">2012</td><td align="center">20</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna mFE Solarteh </td><td></td><td>Štore </td><td align="center">2012</td><td align="center">267,58</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Policnik </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">7,53</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Cugmajster 1 </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">99,17</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VIGRAD </td><td></td><td>Ljubečna </td><td align="center">2012</td><td align="center">399,84</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE RCE 1 - mikro fotonapetostna elektrarna </td><td></td><td>Šoštanj </td><td align="center">2012</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Heindl 12 </td><td></td><td>Topolšica </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Gruska </td><td></td><td>Buče </td><td align="center">2012</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Mesninček 2 </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE INPOS CELJE II - mala fotonapetostna elektrarna </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">186,36</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Lapornik </td><td></td><td>Rimske Toplice </td><td align="center">2012</td><td align="center">9,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Šket </td><td></td><td>Gomilsko </td><td align="center">2012</td><td align="center">14,88</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Pajk </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">11,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Legro </td><td></td><td>Solčava </td><td align="center">2012</td><td align="center">5,88</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Tkavc </td><td></td><td>Nazarje </td><td align="center">2012</td><td align="center">22,56</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Bisol IV </td><td></td><td>Prebold </td><td align="center">2012</td><td align="center">86</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Javornik </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">30</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Lipovšek </td><td></td><td>Vojnik </td><td align="center">2012</td><td align="center">12</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE-GAJSTER2 </td><td></td><td>Rogaška Slatina </td><td align="center">2012</td><td align="center">24,89</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE PGD VOJNIK </td><td></td><td>Vojnik </td><td align="center">2012</td><td align="center">24</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Rojnik Jožef </td><td></td><td>Braslovče </td><td align="center">2012</td><td align="center">20,16</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SODRA </td><td></td><td>Slovenske Konjice </td><td align="center">2012</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Sonce Pišče </td><td></td><td>Gorica pri Slivnici </td><td align="center">2012</td><td align="center">122,7</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ZOBNA VILA RUŠE </td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">49,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE CEP Ruše </td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">49,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE CEP Polzela </td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">550</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Jagodič </td><td></td><td>Šentjur </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE DAT-CON </td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">499,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MSE Rutnik 1 </td><td></td><td>Zreče </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna Albert Korbar II </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Stepišnik </td><td></td><td>Gomilsko </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Sonček Colnarič </td><td></td><td>Rogaška Slatina </td><td align="center">2012</td><td align="center">13,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Cizej 2 </td><td></td><td>Braslovče </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Amitur </td><td></td><td>Gomilsko </td><td align="center">2012</td><td align="center">10,08</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Vitanc </td><td></td><td>Vransko </td><td align="center">2012</td><td align="center">22,56</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Urankar </td><td></td><td>Gomilsko </td><td align="center">2012</td><td align="center">48,24</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Avtotehnika II </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">49,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Hrušovar 3 </td><td></td><td>Braslovče </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kopič </td><td></td><td>Bistrica ob Sotli </td><td align="center">2012</td><td align="center">15,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Daka - Sela </td><td></td><td>Podčetrtek </td><td align="center">2012</td><td align="center">22,26</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Podpečnik </td><td></td><td>Gornji Grad </td><td align="center">2012</td><td align="center">46,31</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE PROS-BIO - 153,5 kWp </td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2012</td><td align="center">153,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EMO 2 </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kužnik 2 </td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">29,16</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Bisol III </td><td></td><td>Prebold </td><td align="center">2012</td><td align="center">240</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Beloglavc </td><td></td><td>Gomilsko </td><td align="center">2012</td><td align="center">28,37</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna MFE Colnarič </td><td></td><td>Rečica ob Savinji </td><td align="center">2012</td><td align="center">20,54</td>
+			</tr><tr>
+				<td style="text-align:left;">SE Jeraj </td><td></td><td>Ljubno ob Savinji </td><td align="center">2012</td><td align="center">17,28</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna MFE PV Future 3 </td><td></td><td>Prebold </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Čepin 1 </td><td></td><td>Buče </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Petrol - Unior SO-3 </td><td></td><td>Zreče </td><td align="center">2012</td><td align="center">252,84</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Beloglavc Silva </td><td></td><td>Braslovče </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Mramor </td><td></td><td>Buče </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Hriberski 2 </td><td></td><td>Pristava pri Mestinju </td><td align="center">2012</td><td align="center">44,1</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Krajnc 1 </td><td></td><td>Šmartno v Rožni dolini </td><td align="center">2012</td><td align="center">29,12</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Hriberski 1 </td><td></td><td>Pristava pri Mestinju </td><td align="center">2012</td><td align="center">49,4</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna MFE Zupanc Petrovče </td><td></td><td>Petrovče </td><td align="center">2012</td><td align="center">43,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ZIP 2 </td><td></td><td>Bistrica ob Sotli </td><td align="center">2012</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ESUN </td><td></td><td>Rimske Toplice </td><td align="center">2012</td><td align="center">23,66</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Maksi 2 </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">41,16</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Guček </td><td></td><td>Planina pri Sevnici </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Medved </td><td></td><td>Šoštanj</td><td align="center">2012</td><td align="center">24,91</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Močnik</td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE GD Pristava </td><td></td><td>Pristava pri Mestinju </td><td align="center">2012</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Ellatron Polje </td><td></td><td>Šentjur </td><td align="center">2012</td><td align="center">47,52</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Stojnšek </td><td></td><td>Rogaška Slatina </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Vseved Dobrna </td><td></td><td>Dobrna </td><td align="center">2012</td><td align="center">49,56</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Ciciban Dobrna </td><td></td><td>Dobrna </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE DADO </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">11</td>
+			</tr><tr>
+				<td style="text-align:left;">MSE Grafika Gracer </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE TERMOSHOP</td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2012</td><td align="center">43,12</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Edit</td><td></td><td>Braslovče </td><td align="center">2012</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna MFE Zupanc Ločica</td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Verbič</td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">38,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Žohar</td><td></td><td>Prebold </td><td align="center">2012</td><td align="center">7,28</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Brinovec</td><td></td><td>Šempeter v Savinjski dolini</td><td align="center">2012</td><td align="center">23,14</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Golež </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">37</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Ušen 1</td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2012</td><td align="center">13,47</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EEA OLEŠČE</td><td></td><td>Laško</td><td align="center">2012</td><td align="center">49</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Pišek 4 </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">30</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Brezovnik 1</td><td></td><td>Vojnik </td><td align="center">2012</td><td align="center">33,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VAUKAN LETUŠ</td><td></td><td>Šmartno ob Paki </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Hardstore 1</td><td></td><td>Petrovče </td><td align="center">2012</td><td align="center">13,6</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Simpl</td><td></td><td>Šentjur </td><td align="center">2012</td><td align="center">29,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Ušen 2</td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2012</td><td align="center">15,93</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Štusej Matej</td><td></td><td>Gomilsko </td><td align="center">2012</td><td align="center">40,18</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Čepin Ivan</td><td></td><td>Buče </td><td align="center">2012</td><td align="center">13,6</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Podkrajšek 3</td><td></td><td>Loče </td><td align="center">2012</td><td align="center">49,99</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Špela</td><td></td><td>Gomilsko </td><td align="center">2012</td><td align="center">34,06</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE K-SOL 10</td><td></td><td>Gornji Grad </td><td align="center">2012</td><td align="center">27,44</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna MFE Ambroš</td><td></td><td>Dramlje </td><td align="center">2012</td><td align="center">10,29</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Ellatron 3 </td><td></td><td>Podplat </td><td align="center">2012</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Possi</td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">6,24</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE-Kamenšek </td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2012</td><td align="center">7</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Bani </td><td></td><td>Sveti Štefan </td><td align="center">2012</td><td align="center">23,04</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Mozirje </td><td></td><td>Mozirje </td><td align="center">2012</td><td align="center">48,57</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Sitar </td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2012</td><td align="center">25,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Cekom </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">10</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Sonce Marelica </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">39,48</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Cevzar 2 </td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE BS TRADE </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SODRA </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE-PRAH </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">20,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE-PLASARD </td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2012</td><td align="center">45,6</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE-MEBI 4 </td><td></td><td>Šempeterv Savinjski dolini </td><td align="center">2012</td><td align="center">45,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE-ENERGETIKA-SPD </td><td></td><td>Šempeterv Savinjski dolini </td><td align="center">2012</td><td align="center">49,59</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE-MEBI 3 </td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2012</td><td align="center">45,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Lampret </td><td></td><td>Petrovče </td><td align="center">2012</td><td align="center">34</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna Marguč Ferdinand </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">175</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Jecl 2 </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">32,34</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Rojnik 2 - 25,92 kWp </td><td></td><td>Braslovče </td><td align="center">2012</td><td align="center">25,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Gračner </td><td></td><td>Dramlje </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Omladič </td><td></td><td>Šmartno ob Paki </td><td align="center">2012</td><td align="center">10,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE JK Kaker </td><td></td><td>Mozirje</td><td align="center">2012</td><td align="center">30</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Solarmont Kozje </td><td></td><td>Kozje </td><td align="center">2012</td><td align="center">262</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Ograje Kočevar </td><td></td><td>Prebold </td><td align="center">2012</td><td align="center">39,69</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kolenc 2 </td><td></td><td>Ljubno ob Savinji </td><td align="center">2012</td><td align="center">12</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Hostnik </td><td></td><td>Gorica pri Slivnici </td><td align="center">2012</td><td align="center">10,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Dimec </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">11,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kragolnik Karel </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">22,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE CHERYN - mikro sončna elektrarna </td><td></td><td>Frankolovo </td><td align="center">2012</td><td align="center">6</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Lopan </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">11,04</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Jurak </td><td></td><td>Bistrica ob Sotli </td><td align="center">2012</td><td align="center">9,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE BAH 2 </td><td></td><td>Loka pri Žusmu </td><td align="center">2012</td><td align="center">17,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Pislak </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">35</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Korošec </td><td></td><td>Zreče </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kincl </td><td></td><td>Grobelno </td><td align="center">2012</td><td align="center">25</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MONTEH PLUS </td><td></td><td>Šentjur </td><td align="center">2012</td><td align="center">23,52</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ATOM </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">9,62</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SONCE ČEŠNJA </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">40,32</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Doberšek </td><td></td><td>Sveti Štefan </td><td align="center">2012</td><td align="center">11</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Verhovšek </td><td></td><td>Grobelno </td><td align="center">2012</td><td align="center">14,25</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna Elektrosignal </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Oblak - sončna elektrarna na strehi stanovanjske hiše v Florjanu </td><td></td><td>Šoštanj </td><td align="center">2012</td><td align="center">11,76</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SONCE ŽAREK </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">40,02</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Pergola </td><td></td><td>Podplat</td><td align="center">2012</td><td align="center">3,7</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Krumpak </td><td></td><td>Rogaška Slatina </td><td align="center">2012</td><td align="center">15,6</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Škoflek Slivnica </td><td></td><td>Gorica pri Slivnici </td><td align="center">2012</td><td align="center">42,09</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kroflič Slivnica </td><td></td><td>Gorica pri Slivnici </td><td align="center">2012</td><td align="center">42,09</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Mlinšek - Sončna elektrarna na strehi stanovanjske hiše </td><td></td><td>Žalec </td><td align="center">2012</td><td align="center">8,58</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kolenc </td><td></td><td>Ljubno ob Savinji </td><td align="center">2012</td><td align="center">35,28</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna Lebič </td><td></td><td>Gornji Grad </td><td align="center">2012</td><td align="center">16,42</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Marinič </td><td></td><td>Žalec</td><td align="center">2012</td><td align="center">8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Prezelj </td><td></td><td>Sentjur </td><td align="center">2012</td><td align="center">7,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Domadenik </td><td></td><td>Podčetrtek </td><td align="center">2012</td><td align="center">11,76</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Tomgrad </td><td></td><td>Bistrica ob Sotli </td><td align="center">2012</td><td align="center">18,24</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Skroel Slivnica </td><td></td><td>Gorica pri Slivnici </td><td align="center">2012</td><td align="center">42,32</td>
+			</tr><tr>
+				<td style="text-align:left;">MSE Smogavc 3 </td><td></td><td>Zreče</td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Jecl 1 </td><td></td><td>Štnalje pri Jelšah </td><td align="center">2012</td><td align="center">42,63</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Žurko </td><td></td><td>Gorica pri Slivnici </td><td align="center">2012</td><td align="center">44,66</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE K-SOL 2 </td><td></td><td>Gornji Grad </td><td align="center">2012</td><td align="center">27,44</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Močnik-JSM </td><td></td><td>Šmalje pri Jelšah </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MSE Rutnik 2 </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">15,99</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Shema </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SONCE JABOLKO </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">40,32</td>
+			</tr><tr>
+				<td style="text-align:left;">MSE Smogavc 2 </td><td></td><td>Zreče</td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Sevšek </td><td></td><td>Šmalje pri Jelšah </td><td align="center">2012</td><td align="center">27,12</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna Zajc </td><td></td><td>Rečica ob Savinji </td><td align="center">2012</td><td align="center">18,45</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SINTAL CELJE II </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">23,04</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE CEP </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">31,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Prašnikar - mala fotonapetostna elektrarna </td><td></td><td>Šmartno ob Paki </td><td align="center">2012</td><td align="center">10,81</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE PETROL - UNIOR 1 </td><td></td><td>Zreče </td><td align="center">2012</td><td align="center">362,88</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Obrul 2 </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Mizarstvo Dobrina 1 </td><td></td><td>Bistrica ob Sotli </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Obrul 3 </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KAPIS </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">48</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE GAŠPERET 1 </td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Nik </td><td></td><td>Rečica ob Savinji</td><td align="center">2012</td><td align="center">24</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE kotnik, Plešivec - Sončna elektrarna na strehi stanovanjske hiše </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">13</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna MFE Žmahar </td><td></td><td>Štore </td><td align="center">2012</td><td align="center">31</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Podkrajšek 2</td><td></td><td>Loče</td><td align="center">2012</td><td align="center">49,99</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Mizarstvo Dobrina 2 </td><td></td><td>Bistrica ob Sotli </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Cevzar </td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">49,99</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Obrul 1 </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SONCE SLIVA </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">40,32</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE TERON Ponikva </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">140,07</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MERKSCHA 5 </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">249,6</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Komplet </td><td></td><td>Šmartno v Rožni dolini </td><td align="center">2012</td><td align="center">31,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SIP Šempeter </td><td></td><td>Šempeter v Savinjski dolini </td><td align="center">2012</td><td align="center">700</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Geršak Matjaž </td><td></td><td>Lesično </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SONCE HRUŠKA </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">40,32</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kopušar, Rečica ob Savinji </td><td></td><td>Rečica ob Savinji </td><td align="center">2012</td><td align="center">49,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE GBK ELLATRON </td><td></td><td>Podplat </td><td align="center">2012</td><td align="center">12</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Lopan LOČE </td><td></td><td>Loče</td><td align="center">2012</td><td align="center">38,47</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Smogavc 1 </td><td></td><td>Zreče </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Boršič </td><td></td><td>Rogaška Slatina </td><td align="center">2012</td><td align="center">33,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Sveti Križ </td><td></td><td>Rogaška Slatina </td><td align="center">2012</td><td align="center">19,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kaker </td><td></td><td>Gornji Grad </td><td align="center">2012</td><td align="center">15,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Turnšek </td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">123,73</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Poiškruh 2 </td><td></td><td>Gornji Grad </td><td align="center">2012</td><td align="center">16,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kužnik 1 </td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">29,16</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna MFE Presečnik </td><td></td><td>Ljubno ob Savinji </td><td align="center">2012</td><td align="center">17</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VOLK DVA </td><td></td><td>Rečica ob Savinji </td><td align="center">2012</td><td align="center">10,08</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Žaga-Tiples </td><td></td><td>Nazalje </td><td align="center">2012</td><td align="center">577</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Glušič </td><td></td><td>Mozirje</td><td align="center">2012</td><td align="center">18,72</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Stavba B - mikro fotonapetostna elektrarna </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Pirš </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">49,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MIC3 - mikro fotonapetostna elektrarna </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Plaznik </td><td></td><td>Ljubno ob Savinji </td><td align="center">2012</td><td align="center">32,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Future 13 </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">8,85</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KZ Šmartno </td><td></td><td>Šmartno ob Paki </td><td align="center">2012</td><td align="center">63,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KZ Metleče </td><td></td><td>Šoštanj </td><td align="center">2012</td><td align="center">110,5</td>
+			</tr><tr>
+				<td style="text-align:left;">SFE Likeb-3 </td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Zidanšek </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">28</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Aradon 2 </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">5,72</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Eling Solar </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kodrin 1 </td><td></td><td>Kozje </td><td align="center">2012</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna MFE VOC Latkova vas </td><td></td><td>Prebold </td><td align="center">2012</td><td align="center">113,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Zapuže </td><td></td><td>Planina pri Sevnici </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Zakošek </td><td></td><td>Buče </td><td align="center">2012</td><td align="center">11</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna MFE Sonkon </td><td></td><td>Slovenske Konjice </td><td align="center">2012</td><td align="center">39,78</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Druga </td><td></td><td>Braslovče </td><td align="center">2012</td><td align="center">13,6</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Grobin 1 </td><td></td><td>Šrn</td><td align="center">2012</td><td align="center">49,74</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Senica 1 </td><td></td><td>Planina pri Sevnici </td><td align="center">2012</td><td align="center">38</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MONTPREIS </td><td></td><td>Planina pri Sevnici </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Brečko 2 </td><td></td><td>Šentjur </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MIC 2 - mikro fotonapetostna elektrarna </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">49,35</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Java Loče </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">12,27</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Zapuže 2 </td><td></td><td>Planina pri Sevnici </td><td align="center">2012</td><td align="center">23,76</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Štorman </td><td></td><td>Polzela </td><td align="center">2012</td><td align="center">33,3</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Dešman </td><td></td><td>Ljubno ob Savinji</td><td align="center">2012</td><td align="center">49,7</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala fotonapetostna elektrarna NSY </td><td></td><td>Prebold </td><td align="center">2012</td><td align="center">607,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Tehovnik </td><td></td><td>Zreče </td><td align="center">2012</td><td align="center">11,76</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna MSE ELPRO Križnič 3 </td><td></td><td>Slovenske Konjice </td><td align="center">2012</td><td align="center">40,55</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Stenšak </td><td></td><td>Gornji Grad</td><td align="center">2012</td><td align="center">41,25</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Varpolje </td><td></td><td>Rečica ob Savinji </td><td align="center">2012</td><td align="center">218,55</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Jajce Slivnica </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">40,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Petelin Slivnica </td><td></td><td>Gorica pri Slivnici </td><td align="center">2012</td><td align="center">40,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Podkrajšek </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">49,99</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Frama </td><td></td><td>Lesično</td><td align="center">2012</td><td align="center">23,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Top Invest </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Senica 2 </td><td></td><td>Planina pri Sevnici </td><td align="center">2012</td><td align="center">29,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Orel </td><td></td><td>Mozirje </td><td align="center">2012</td><td align="center">44,94</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Orač </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">39,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Sonce Sadje </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">40,32</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE K-SOL 1 </td><td></td><td>Vitanje </td><td align="center">2012</td><td align="center">198,45</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE OŠ Pečar </td><td></td><td>Vojnik </td><td align="center">2012</td><td align="center">11</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Amon </td><td></td><td>Lesično </td><td align="center">2012</td><td align="center">23,25</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Boršič </td><td></td><td>Šentjur </td><td align="center">2012</td><td align="center">31,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Jager Mestinje </td><td></td><td>Podplat </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kokoš Slivnica </td><td></td><td>Gorica pri Slivnici </td><td align="center">2012</td><td align="center">40,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Gumzej </td><td></td><td>Loče </td><td align="center">2012</td><td align="center">31</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Jager Velenje </td><td></td><td>Velenje </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE BIOTOPIC </td><td></td><td>Laško </td><td align="center">2012</td><td align="center">10,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE JO-JO 2 </td><td></td><td>Ponikva </td><td align="center">2012</td><td align="center">40</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Interflex </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">33,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Matej </td><td></td><td>Šmarje pri Jelšah </td><td align="center">2012</td><td align="center">9,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Eurograf </td><td></td><td>Celje </td><td align="center">2012</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Šelekar </td><td></td><td>Podčetrtek </td><td align="center">2012</td><td align="center">36,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Videc </td><td></td><td>Laško </td><td align="center">2012</td><td align="center">40</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kolar </td><td></td><td>Podčetrtek </td><td align="center">2012</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE DEBELJAK</td><td></td><td>Podplat</td><td align="center">2013</td><td align="center">49,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE OŠ Ivana Skvarče</td><td></td><td>Zreče</td><td align="center">2013</td><td align="center">26,13</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE FARMA NADLESK- JUG</td><td></td><td>Ljubečna</td><td align="center">2013</td><td align="center">40,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ŽAŽE</td><td></td><td>Velenje</td><td align="center">2013</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna OCV3</td><td></td><td>Planina pri Sevnici</td><td align="center">2013</td><td align="center">25,5</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna Dravograd</td><td></td><td>Zreče</td><td align="center">2013</td><td align="center">40,5</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna Hribšek</td><td></td><td>Vitanje</td><td align="center">2013</td><td align="center">9,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Odreitz</td><td></td><td>Dramlje</td><td align="center">2013</td><td align="center">25,92</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna MFE Tuš Murska Sobota I</td><td></td><td>Slovenske Konjice</td><td align="center">2013</td><td align="center">162,96</td>
+			</tr><tr>
+				<td style="text-align:left;">SE Branko Višnjar</td><td></td><td>Velenje</td><td align="center">2013</td><td align="center">15,21</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE BRODEJ</td><td></td><td>Vrtanje</td><td align="center">2013</td><td align="center">43,3</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Merkscha 7</td><td></td><td>Ceje</td><td align="center">2013</td><td align="center">24,99</td>
+			</tr><tr>
+				<td style="text-align:left;">SE PO-LES 2</td><td></td><td>Slovenske Konjice</td><td align="center">2013</td><td align="center">44,59</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Brečko Franc</td><td></td><td>Kalobje</td><td align="center">2013</td><td align="center">22,08</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Geršak 3</td><td></td><td>Pristava pri Mestinju</td><td align="center">2013</td><td align="center">45,25</td>
+			</tr><tr>
+				<td style="text-align:left;">MSE Metalkom P2 </td><td></td><td>Loče</td><td align="center">2013</td><td align="center">4,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MSE FOTOVOLT 1 D.O.O.</td><td></td><td>Gorica pri Slivnici </td><td align="center">2013</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MSE Pavrič</td><td></td><td>Slovenske Konjice</td><td align="center">2013</td><td align="center">4,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MERKSCHA 6</td><td></td><td>Ceje</td><td align="center">2013</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Gogius</td><td></td><td>Zreče</td><td align="center">2013</td><td align="center">5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE HERNAUS </td><td></td><td>Gorica pri Slivnici </td><td align="center">2013</td><td align="center">8,6</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Gaberšek 1</td><td></td><td>Šentjur</td><td align="center">2013</td><td align="center">133,36</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Krajnc 1</td><td></td><td>Vrtanje</td><td align="center">2013</td><td align="center">38</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MERKSCHA 8</td><td></td><td>Celje</td><td align="center">2013</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MERKSCHA 9</td><td></td><td>Celje</td><td align="center">2013</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE RCE II - mikro fotonapetostna elektrarna</td><td></td><td>Šoštanj</td><td align="center">2013</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">SE ALUPLA 2</td><td></td><td>Pristava pri Mestinju </td><td align="center">2013</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SKARLOVNIK</td><td></td><td>Šmartno ob Dreti </td><td align="center">2013</td><td align="center">7,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Rimos 2</td><td></td><td>Dramlje </td><td align="center">2013</td><td align="center">10,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MSE Pušnik</td><td></td><td>Loče</td><td align="center">2013</td><td align="center">10,3</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Ivanušič</td><td></td><td>Šmartno v Rožni dolini</td><td align="center">2013</td><td align="center">16,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Bartol </td><td></td><td>Stara Cerkev</td><td align="center">2013</td><td align="center">4,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EC Mestinje 1 </td><td></td><td>Podplat </td><td align="center">2013</td><td align="center">35,77</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE Leskovar </td><td></td><td>Loče</td><td align="center">2013</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MERKSCHA 8 </td><td></td><td>Celje </td><td align="center">2013</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE MERKSCHA 9 </td><td></td><td>Celje </td><td align="center">2013</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">SE Bučer 4 </td><td></td><td>Ponikva</td><td align="center">2013</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">SE Žnidar 1 </td><td></td><td>Ponikva</td><td align="center">2013</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE SOLKER </td><td></td><td>Rečica ob Savinji</td><td align="center">2013</td><td align="center">281,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Pirečnik </td><td></td><td>Šoštanj</td><td align="center">2013</td><td align="center">9,8</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KOPER 1</td><td></td><td>Šmartno ob Dreti </td><td align="center">2013</td><td align="center">36</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Maček 2</td><td></td><td>Lesično</td><td align="center">2013</td><td align="center">16,66</td>
+			</tr><tr>
+				<td style="text-align:left;">Fotovoltaična elektrarna MFE Rihter 2</td><td></td><td>Gornji Grad</td><td align="center">2013</td><td align="center">49,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Gaberšek 2</td><td></td><td>Šentjur</td><td align="center">2013</td><td align="center">189,72</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Šuster</td><td></td><td>Šentjur</td><td align="center">2013</td><td align="center">10,25</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KDM PRO II.</td><td></td><td>Loče</td><td align="center">2013</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Basle Tabor</td><td></td><td>Tabor</td><td align="center">2013</td><td align="center">46,53</td>
+			</tr><tr>
+				<td style="text-align:left;">MSE Smogavc 4</td><td></td><td>Zreče </td><td align="center">2013</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE AD Vita</td><td></td><td>Slovenske Konjice</td><td align="center">2013</td><td align="center">140,39</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Košec</td><td></td><td>Polzela</td><td align="center">2013</td><td align="center">49,95</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Brežnik</td><td></td><td>Celje</td><td align="center">2013</td><td align="center">49</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna - Koren Peter III.</td><td></td><td>Loče</td><td align="center">2013</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EKO SOLARIS 1</td><td></td><td>Braslovče</td><td align="center">2013</td><td align="center">159,5</td>
+			</tr><tr>
+				<td style="text-align:left;">Sončna elektrarna Golob Meliše</td><td></td><td>Ljubno ob SaYinji</td><td align="center">2013</td><td align="center">34,3</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Hudina</td><td></td><td>Bistrica ob Sotli</td><td align="center">2013</td><td align="center">33,08</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE K-SOL 3</td><td></td><td>Gornji Grad</td><td align="center">2013</td><td align="center">27,44</td>
+			</tr><tr>
+				<td style="text-align:left;">OŠ Hruševec</td><td></td><td>Šentjur</td><td align="center">2013</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE KDM PRO I.</td><td></td><td>Loče </td><td align="center">2013</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE K-Sol 8</td><td></td><td>Gornji Grad</td><td align="center">2013</td><td align="center">27,44</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE Gosnik</td><td></td><td>Slovenske Konjice</td><td align="center">2013</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro fotonapetostna elektrarna MFE K-Sol 4</td><td></td><td>Gornji Grad</td><td align="center">2013</td><td align="center">27,44</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE ZOO-OAZA d.o.o.</td><td></td><td>Podsreda</td><td align="center">2013</td><td align="center">33,56</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE VP Tirosek</td><td></td><td>Gornji Grad</td><td align="center">2013</td><td align="center">13,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Lipuš - Sončna elektrarna na sledilniku ob objektu</td><td></td><td>Žalec</td><td align="center">2013</td><td align="center">11,13</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Drovenik</td><td></td><td>Rogaška Slatina</td><td align="center">2013</td><td align="center">29,45</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Golf</td><td></td><td>Celje</td><td align="center">2013</td><td align="center">23,4</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Beloglavc 1</td><td></td><td>Gomilsko</td><td align="center">2013</td><td align="center">10,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Remic</td><td></td><td>Šmartno ob Dreti</td><td align="center">2013</td><td align="center">17,76</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Ekod 2</td><td></td><td>Buče</td><td align="center">2013</td><td align="center">13,5</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Ravnak</td><td></td><td>Celje</td><td align="center">2013</td><td align="center">13,2</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kupec</td><td></td><td>Prebold</td><td align="center">2013</td><td align="center">30</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Jager Velenje 2</td><td></td><td>Velenje</td><td align="center">2013</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EUROGRAF II</td><td></td><td>Velenje</td><td align="center">2013</td><td align="center">49,82</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Dobnik</td><td></td><td>Ponikva</td><td align="center">2013</td><td align="center">49,78</td>
+			</tr><tr>
+				<td style="text-align:left;">SE Kolenc</td><td></td><td>Rečica ob Savinji</td><td align="center">2013</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">Mikro sončna elektrarna Kolar</td><td></td><td>Šmartno ob Paki</td><td align="center">2013</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna KonusKonex</td><td></td><td>Slovenske Konjice</td><td align="center">2013</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">Mala sončna elektrarna Metalkom</td><td></td><td>Slovenske Konjice</td><td align="center">2013</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Andrejc - Sončna elektrarna na strehi poslovnih objektov</td><td></td><td>Velenje</td><td align="center">2013</td><td align="center">174,37</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Hofer Celje Ljubljanska</td><td></td><td>Celje</td><td align="center">2013</td><td align="center">65,96</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Arzenak</td><td></td><td>Ponikva</td><td align="center">2013</td><td align="center">14,88</td>
+			</tr><tr>
+				<td style="text-align:left;">Fotovoltaična elektrarna MFE Obojnik</td><td></td><td>Ljubno ob Savinji</td><td align="center">2013</td><td align="center">49,7</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Kovinar 2</td><td></td><td>Celje</td><td align="center">2013</td><td align="center">20,68</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE GBK KZ PRISTAVA</td><td></td><td>Pristava pri Mestinju</td><td align="center">2014</td><td align="center">11</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE GODLER - H</td><td></td><td>Buče</td><td align="center">2014</td><td align="center">8,38</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE GODLER ALOJZ</td><td></td><td>Buče</td><td align="center">2014</td><td align="center">14</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE GODLER SANDI</td><td></td><td>Buče</td><td align="center">2014</td><td align="center">11</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Hrušovar 4</td><td></td><td>Braslovče</td><td align="center">2014</td><td align="center">17</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE RCE III - mikro fotonapetostna elektrarna</td><td></td><td>Velenje </td><td align="center">2014</td><td align="center">22,05</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE GODLER 2</td><td></td><td>Buče</td><td align="center">2014</td><td align="center">34</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Krajnc 2</td><td></td><td>Vitanje</td><td align="center">2014</td><td align="center">30,87</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Skornšek II</td><td></td><td>Šoštanj</td><td align="center">2014</td><td align="center">6,9</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE Jakopina</td><td></td><td>Podčetrtek</td><td align="center">2014</td><td align="center">49,25</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE LOKA 2 </td><td></td><td>Loka pri Žusmu </td><td align="center">2014</td><td align="center">483</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE EMO 3 </td><td></td><td>Celje </td><td align="center">2014</td><td align="center">20,28</td>
+			</tr><tr>
+				<td style="text-align:left;">MSE DUP - Koper 1</td><td></td><td>Kozje </td><td align="center">2014</td><td align="center">49,92</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE STAVBA C - mikro fotonapetostna elektrarna</td><td></td><td>Šoštanj </td><td align="center">2014</td><td align="center">49,98</td>
+			</tr><tr>
+				<td style="text-align:left;">MFE RAJMAX </td><td></td><td>Kozje </td><td align="center">2014</td><td align="center">49,75</td>
+			</tr><tr>
+				<td style="font-weight:bold;">Skupno do 8.5.2019</td><td></td><td></td><td></td><td align="center" style="font-weight:bold;">45063,99</td>
+			</tr>
+		</table>
+
+
+
+     <br />
+
+
+
+<h4>Opomba: Podatki so povzeti iz različnih javno dostopnih virov. V kolikor leto 
+    postavitve ni poznano je privzeto leto iz številke deklaracije o proizvodni 
+    napravi.</h4>
+
+ </div>
+
+
+          </div>
+
+        <div id="main-window-bottom">
+        
+        
+   
+
+        
+        
+        
+        </div>
+      
+     
+     </div>
+     <div id="bottom">
+         
+		  <!-- footer and copyright notice -->
+	     <p>&nbsp;&copy; 2007-2019 PVportal, UL FE, LPVO, Vse pravice pridržane.</p>
+		  <!-- end footer and copyright notice -->
+	 
+        <!-- Start of StatCounter Code -->
+        <script type="text/javascript">
+            var sc_project = 3681995;
+            var sc_invisible = 0;
+            var sc_security = "6991875f"; 
+        </script>
+
+      <!--start counter-->
+        <script type="text/javascript"
+            src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+            class="statcounter"><a title="web counter"
+            href="http://statcounter.com/" target="_blank"><img
+            class="statcounter"
+            src="http://c.statcounter.com/3681995/0/6991875f/0/"
+            alt="web counter" ></a></div></noscript>
+        
+        <!-- End of StatCounter Code -->
+        
+
+        </div>
+     </div>
+
+    
+		<script type='text/javascript'>new Sys.WebForms.Menu({ element: 'mainMenu', disappearAfter: 500, orientation: 'horizontal', tabIndex: 0, disabled: false });</script><script type='text/javascript'>new Sys.WebForms.Menu({ element: 'blankSublinks_subMenu', disappearAfter: 500, orientation: 'horizontal', tabIndex: 0, disabled: false });</script></form>
+</body>
+</html>

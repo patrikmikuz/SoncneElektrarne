@@ -1,0 +1,905 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	PVportal - slovenski portal za fotovoltaiko
+</title><link href="Styles/images/sonce.ico" rel="shortcut icon" /><link href="Styles/NewStyle.css" rel="stylesheet" type="text/css" media="screen" />
+    <style type="text/css">
+
+a:hover {background:#ffffff; text-decoration:none;} /*BG color is a must for IE6  */
+a.tooltip span {display:none; padding:2px 3px; margin-left:8px; }
+a.tooltip:hover span{display:inline; position:absolute; border:1px solid #cccccc; background:#ffffff; color:#6c6c6c;}
+
+
+
+</style>
+<script type="text/javascript">
+    function ShowImage(src, imgID) {
+        var img = document.getElementById(imgID);
+        img.src = src;
+        img.style.display = "block";
+    }
+    function HideImage(imgID) {
+        document.getElementById(imgID).style.display = "none";
+    }
+</script>
+<style type="text/css">
+	/* <![CDATA[ */
+	#mainMenu img.icon { border-style:none;vertical-align:middle; }
+	#mainMenu img.separator { border-style:none;display:block; }
+	#mainMenu img.horizontal-separator { border-style:none;vertical-align:middle; }
+	#mainMenu ul { list-style:none;margin:0;padding:0;width:auto; }
+	#mainMenu ul.dynamic { z-index:1; }
+	#mainMenu a { text-decoration:none;white-space:nowrap;display:block; }
+	#mainMenu a.static { text-decoration:none;border-style:none;padding-left:0.15em;padding-right:0.15em; }
+	#mainMenu a.popout { background-image:url("/WebResource.axd?d=osHMl6ZkS_ezBE8PUcw8Eau4Rc40_3uto4ZBAYk8yldRX1ZhRV0Am4fQiG6AHrQ8WdBvW7JzgP5zt-Ihn2wUtshxK-SoQHzy4Iw8hJfquVk1&t=635418570520000000");background-repeat:no-repeat;background-position:right center;padding-right:14px; }
+	#mainMenu a.static.selected { text-decoration:none;border-style:none; }
+	/* ]]> */
+</style><style type="text/css">
+	/* <![CDATA[ */
+	#blankSublinks_subMenu img.icon { border-style:none;vertical-align:middle; }
+	#blankSublinks_subMenu img.separator { border-style:none;display:block; }
+	#blankSublinks_subMenu img.horizontal-separator { border-style:none;vertical-align:middle; }
+	#blankSublinks_subMenu ul { list-style:none;margin:0;padding:0;width:auto; }
+	#blankSublinks_subMenu ul.dynamic { z-index:1; }
+	#blankSublinks_subMenu a { text-decoration:none;white-space:nowrap;display:block; }
+	#blankSublinks_subMenu a.static { padding-left:0.15em;padding-right:0.15em; }
+	#blankSublinks_subMenu a.popout { background-image:url("/WebResource.axd?d=osHMl6ZkS_ezBE8PUcw8Eau4Rc40_3uto4ZBAYk8yldRX1ZhRV0Am4fQiG6AHrQ8WdBvW7JzgP5zt-Ihn2wUtshxK-SoQHzy4Iw8hJfquVk1&t=635418570520000000");background-repeat:no-repeat;background-position:right center;padding-right:14px; }
+	/* ]]> */
+</style></head>
+<body id="body">
+
+
+<script src="Scripts/highcharts.js" type="text/javascript"></script>
+  <script src="Scripts/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="Scripts/jquery.js"></script>
+  <script type="text/javascript" src="Scripts/jquery.innerfade.js"></script>
+
+
+  
+    <form method="post" action="SESeznam_neto.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTA2NDQyOTQ0OA9kFgJmD2QWAgIDD2QWAgIBD2QWCgIDEDwrAA0CAA8WAh4LXyFEYXRhQm91bmRnZAwUKwAHBRcwOjAsMDoxLDA6MiwwOjMsMDo0LDA6NRQrAAIWEB4EVGV4dAUFRG9tb3YeBVZhbHVlBQVEb21vdh4LTmF2aWdhdGVVcmwFDS9XZWxjb21lLmFzcHgeB1Rvb2xUaXAFE1Nsb3ZlbnNraSBQViBwb3J0YWweB0VuYWJsZWRnHgpTZWxlY3RhYmxlZx4IRGF0YVBhdGgFDS93ZWxjb21lLmFzcHgeCURhdGFCb3VuZGdkFCsAAhYOHwEFDEZvdG92b2x0YWlrYR8CBQxGb3Rvdm9sdGFpa2EfAwUKL1V2b2QuYXNweB8FZx8GZx8HBQovdXZvZC5hc3B4HwhnZBQrAAIWEB8BBQdTZXZhbmplHwIFB1NldmFuamUfAwUPL09ic2V2YW5qZS5hc3B4HwQFD1NvbsSNbm8gc2V2YW5qZR8FZx8GZx8HBQ8vb2JzZXZhbmplLmFzcHgfCGdkFCsAAhYQHwEFD05hxI1ydG92YW5qZSBTRR8CBQ9OYcSNcnRvdmFuamUgU0UfAwURL05hY3J0b3ZhbmplLmFzcHgfBAUPTmHEjXJ0b3ZhbmplIFNFHwVnHwZnHwcFES9uYWNydG92YW5qZS5hc3B4HwhnZBQrAAIWEB8BBRJTb27EjW5lIGVsZWt0cmFybmUfAgUSU29uxI1uZSBlbGVrdHJhcm5lHwMFDC9TRXZTTE8uYXNweB8EBRJTb27EjW5lIGVsZWt0cmFybmUfBWcfBmcfBwUML3NldnNsby5hc3B4HwhnZBQrAAIWEB8BBQ9PYm5vdmxqaXZpIHZpcmkfAgUPT2Jub3Zsaml2aSB2aXJpHwMFEi9PYm5vdmxqaXZTTE8uYXNweB8EBRtPYm5vdmxqaXZpIHZpcmkgdiBTbG92ZW5pamkfBWcfBmcfBwUSL29ibm92bGppdnNsby5hc3B4HwhnZGRkAhMPZBYCAgEQPCsADQIADxYCHwBnZAwUKwAEBQswOjAsMDoxLDA6MhQrAAIWDh8BBQlTZXpuYW0gU0UfAgUJU2V6bmFtIFNFHwMFDi9TRVNlem5hbS5hc3B4HwVnHwZnHwcFDi9zZXNlem5hbS5hc3B4HwhnZBQrAAIWEB8BBRZTZXpuYW0gU0UgdiBzYW1vb3NrcmJpHwIFFlNlem5hbSBTRSB2IHNhbW9vc2tyYmkfAwUTL1NFU2V6bmFtX25ldG8uYXNweB8FZx8GZx8HBRMvc2VzZXpuYW1fbmV0by5hc3B4HwhnHghTZWxlY3RlZGdkFCsAAhYOHwEFCEthcnRhIFNFHwIFCEthcnRhIFNFHwMFDS9TRWthcnRhLmFzcHgfBWcfBmcfBwUNL3Nla2FydGEuYXNweB8IZ2RkZAIVDw8WAh8BBQkxMC41LjIwMTlkZAIZDw8WAh8BBQkxMC41LjIwMTlkZAIdD2QWBAIBDw8WAh8BBQg4LjUuMjAxOWRkAgsPDxYEHglHcmlkTGluZXMLKiNTeXN0ZW0uV2ViLlVJLldlYkNvbnRyb2xzLkdyaWRMaW5lcwEeBF8hU0ICgIAgZGQYAQUbY3RsMDAkYmxhbmtTdWJsaW5rcyRzdWJNZW51Dw9kBRZTZXpuYW0gU0UgdiBzYW1vb3NrcmJpZCJeJ4OGOq/IiqI4WfFtGG7YFGUCcQvVRHe9etp8B28Y" />
+</div>
+
+
+<script src="/WebResource.axd?d=Y3MSn76S3wRi5sOZEId3E0ocj1oMgGdOQE20B6tafh8CSAdOvSKd_xUy2Dmsf9_B-eCuJ7nyB27RU2y9bQAnINu5nR9HlqWQREGztyWIP9qFGr6m4ppPY6Sahe5zKFgQyXZS8z_oKqGrbVJ6755hwn-xrnhG0_PU1yjdkpf7P981&amp;t=636761462902042267" type="text/javascript"></script>
+<script src="/WebResource.axd?d=OFhnVn3cluRzGPJcyR0Ntzb6vS92-rjzzHBPp9a902DaKsREJ_Tk82ctXYnNO9Wf9CZtNZBwzHAZG6-T_uQlVhhCbroxxg3OzU0ElX8f9bK7ai4mZlbDo6emDI0DVvHTVHp63Pn0CqoDH2PpOy8rvSxK5K6D07UUg0DDyCMv2Ao1&amp;t=636761462902042267" type="text/javascript"></script><link href="/WebResource.axd?d=aAJfuqxXo21HGI8FgdUmV7YhuDqV6afzM0uZTRUDCsZ1tRXLP-U_HKXAntSg-FhaC75Nz-adPwBkuWLxn9Ws_ukaAQMyXz_drSsx7ApSOcgkqvYBesW3E7AGpQwRmJzLJJvA0qoe_8X5mfUTDllQHg2&t=636761462902042267" type="text/css" rel="stylesheet"></link><link href="/WebResource.axd?d=0bWEylECWnbuQCcGLt73dSBBtNQG7H9dxOLTtp66cueFnwA3pRMO5qhZOS5M3hdhXVqSIYwk7S1VgGt4SFxZJRwjENFItTcr5vBByaqDxX1K8LWEkIbm6AYhTjzHSlZ88ggqBuGBSgn08AzcPYMrJWlx0Fl2S9r9TFIHZ5ULkTU1&t=636761462902042267" type="text/css" rel="stylesheet"></link>
+<script src="/WebResource.axd?d=2TcpXgLIs6w15NQKhjQNkBU_nfbzAIhqxqItteX2rFj0RXteWGUoJkwF43u2S2Jf5jwMfeNRcB7qRYJUFhCm8qq3mi7DZByr6ATBSmZN4XA1&amp;t=635418570520000000" type="text/javascript"></script>
+		<div class="aspNetHidden">
+
+			<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="55DE4DC7" />
+			<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAA9NtJSjYCrPW/dT3dHIarKaIvLK4iOs96PpCKkS4aY8DVL4ZZgMiHlpcl6qVoMdfABfqMVNtBIo8LPGbl4eemAl/p+AoDK4GcsL+YvFZluBY03AHhtSctr+uyYdN3WJqYWJ92ZXmlWIZus4+KnGHDiyYpgXFOyLkTjWaOieZG+7VbGT9eyBZDlPLdI1R28MCTLWsL2cubpoVUxnDOrUcN4fY8KrTHV42Hfz3Y5JBuQYslM/eO8SsoFCOmqG8frnEYUcyHuscEMr/CDutpmrVXUrs8PxK7IBYWpXEKXMRFoVwneVrsdggyo/aZSgnpRl1sXpuvnXJQOcjO664BW6uZr50bxRV47fcnAcawc30X36xA==" />
+		</div>
+    <div id="stran" >
+     <div id="header">
+        <div id="logo-block">
+		    <!-- type your logo and small slogan here -->
+            <p id="logo"><strong>PV</strong><span class="logoblue">portal</span></p>
+		    <p id="slogan">Slovenski portal za fotovoltaiko</p>
+			<!-- end logo and small slogan -->
+
+        </div>    
+        <div id="vreme">
+
+
+
+         <ul id="rotator"> 
+			<?xml version="1.0" encoding="utf-8"?>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Celje</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 14.5 °C
+        <br />
+        Sevanje: 1 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/oblacno.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Koper</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 14.2 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Lesce</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 9.1 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Ljubljana</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 10.9 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Maribor</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 13.8 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Murska Sobota</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 11.4 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Nova Gorica</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 11.4 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Novo mesto</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 10.6 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+<li>
+  <div id="container">
+    <div class="vreme-orange">Slovenj Gradec</div>
+    <div class="vreme-orange-small">2. november 2019 19:40</div>
+    <div class="vreme-blue">
+        Temperatura: 5.1 °C
+        <br />
+        Sevanje: 0 W/m<sup>2</sup><br />
+        Donos sončne elektrarne: 0 %
+      </div>
+    <div class="vreme-ikona">
+      <img alt="" src="&#xD;&#xA;              vreme/noc.png">
+      </img>
+    </div>
+  </div>
+</li>
+       
+	     </ul>
+		
+            <script type="text/javascript">
+             $(document).ready(
+         		function () {
+
+	    	    $('#rotator').innerfade({
+		            speed: 'normal',
+		            timeout: 3000,
+		            type: 'sequence',
+		            containerheight: '220px'
+    		    });
+
+	        	}
+        	);
+            </script>
+
+        </div> 
+     </div>
+     <div id="main">
+       
+          <div id="menudiv"> 
+
+<!--menu-->
+ 
+    <table class="headBar" cellpadding="0" cellspacing="0">
+        <tr>
+            <td colspan="3">
+                <!-- Main navigation menu -->
+                <div class="headLinksBar">
+                    
+<div class="AspNet-Menu-Horizontal" id="mainMenu">
+		<table class="AspNet-Menu">
+			<tr>
+				<td class="AspNet-Menu-TopLevel-domov">
+					<a href="/Welcome.aspx" title="Slovenski PV portal">
+						Domov     </a>
+				</td>
+				<td class="AspNet-Menu-TopLevel-fotovoltaika">
+					<a href="/Uvod.aspx">
+						Fotovoltaika     </a>
+				</td>
+				<td class="AspNet-Menu-TopLevel-sevanje">
+					<a href="/Obsevanje.aspx" title="Sončno sevanje">
+						Sevanje     </a>
+				</td>
+				<td class="AspNet-Menu-TopLevel-načrtovanje_se">
+					<a href="/Nacrtovanje.aspx" title="Načrtovanje SE">
+						Načrtovanje SE     </a>
+				</td>
+				<td class="AspNet-Menu-TopLevel-sončne_elektrarne-Selected">
+					<a href="/SEvSLO.aspx" title="Sončne elektrarne">
+						Sončne elektrarne     </a>
+				</td>
+				<td class="AspNet-Menu-TopLevel-obnovljivi_viri">
+					<a href="/ObnovljivSLO.aspx" title="Obnovljivi viri v Sloveniji">
+						Obnovljivi viri     </a>
+				</td>
+			</tr></table>
+
+	</div>
+                </div>
+                                       
+                  
+                 
+                
+                     
+                  
+                 
+                               </td>
+        </tr>
+    </table>
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="headSubLinksBar">
+                <!-- Sub menu and slogan bar -->
+                
+    
+	<div class="AspNet-Menu-Horizontal" id="blankSublinks_subMenu">
+			<table class="AspNet-Menu">
+				<tr>
+					<td class="AspNet-Menu-Item">
+						<a href="/SESeznam.aspx">
+							Seznam SE</a>
+					</td>
+					<td class=" AspNet-Menu-Selected">
+						<a href="/SESeznam_neto.aspx">
+							Seznam SE v samooskrbi</a>
+					</td>
+					<td class="AspNet-Menu-Item">
+						<a href="/SEkarta.aspx">
+							Karta SE</a>
+					</td>
+				</tr></table>
+
+		</div>
+
+            </td>
+        </tr>
+    </table>
+
+
+
+<!--konec menu-->
+
+
+
+        </div>
+
+          <div id="desno_okno" class="right-window">
+            <h3>Hitre povezave</h3>
+            <hr />
+            <a href="SEvSLO.aspx"><img alt="" src="Styles/images/SEvSLO.png" /></a>&nbsp;&nbsp;
+            <a href="ObsvLJ.aspx"><img alt="" src="Styles/images/sevanje.png" /></a><br /> <br /> 
+            <a href="Proizvodnja.aspx"><img alt="" src="Styles/images/proizvodnja.png" /></a>&nbsp;&nbsp;
+            <a href="Napoved.aspx"><img alt="" src="Styles/images/napoved.png" /></a><br /> <br /> 
+            <a href="SE_FE.aspx"><img alt="" src="Styles/images/SE_LPVO.png" /></a>&nbsp;&nbsp;
+            <a href="CalcObs.aspx"><img alt="" src="Styles/images/sevanje_model.png" /></a><br /> <br /> 
+            <a href="ObsSlo_dan.aspx"><img alt="" src="Styles/images/slosevanje_dan.png" /></a><br /> <br /> 
+
+
+            <h3>Aktualno </h3>
+            <hr />
+            <span id="Label1" class="orange-text">10.5.2019</span>
+            <br />
+             <table id="Table1" class="right-table">
+			<tr>
+				<td style="font-weight:bold;">Pregled PV trga v letu 2018</td>
+			</tr><tr>
+				<td><br/><a href="Aktualno.aspx">Več novic</a></td>
+			</tr>
+		</table>
+            <br />
+         
+            <h3>Dokumenti</h3>
+            <hr />
+            <span id="Label2" class="orange-text">10.5.2019</span>
+            <br />
+             <table id="Table2" class="right-table">
+			<tr>
+				<td style="font-weight:normal;"><img id="Image1" src="Styles/images/pdf25.png" />&nbsp;&nbsp;<a href=http://pv.fe.uni-lj.si/files/Pregled_fotovoltaicnega_trga_v_Sloveniji_2018.pdf>Pregled slovenskega fotovoltaičnega trga v letu 2018</a></td>
+			</tr><tr>
+				<td><br/><a href="Dokumenti.aspx">Več...</a></td>
+			</tr>
+		</table>
+          </div>
+          <div id="main-window">
+             
+    <div id="content-padding">
+ <h1>Sončne elektrarne v samooskrbi v Sloveniji </h1>
+  <h4>Stanje na dan 
+      <span id="Vsebina_Label1">8.5.2019</span>
+     </h4>
+
+<p class="greycenter">
+    <select name="ctl00$Vsebina$DDList" id="Vsebina_DDList" style="height:16px;width:66px;">
+			<option selected="selected" value="*">Vsa leta</option>
+			<option value="2016">2016</option>
+			<option value="2017">2017</option>
+			<option value="2018">2018</option>
+
+		</select>&nbsp;&nbsp;&nbsp; 
+    &nbsp;&nbsp;&nbsp; 
+    <select name="ctl00$Vsebina$DDRegija" id="Vsebina_DDRegija">
+			<option value="0">Slovenija
+    </option>
+			<option value="1">Osrednja Slovenija
+    </option>
+			<option value="2">Podravje
+    </option>
+			<option value="3">Celjska
+    </option>
+			<option value="4">Gorenjska
+    </option>
+			<option value="5">Goriška
+    </option>
+			<option value="6">Primorska
+    </option>
+			<option selected="selected" value="8">Dolenjska
+    </option>
+			<option value="9">Prekmurje
+    </option>
+
+		</select>&nbsp;&nbsp;&nbsp;   
+   
+   <input type="submit" name="ctl00$Vsebina$Button2" value="Osveži" id="Vsebina_Button2" style="LEFT: 10px; TOP: 15px" />
+<!--	Easy <a href="#" class="tooltip">Tooltip<span>
+		<img id="Vsebina_Image1" src="Figures/image008.gif" /></span>
+</a> -->
+
+
+
+</p>
+
+         <table id="Vsebina_Table1" rules="rows" class="centralno" border="1" style="border-color:Gray;margin:1px auto">
+			<tr style="background-color:Orange;">
+				<td style="background-color:Orange;font-weight:bold;">Kraj</td><td align="center" style="background-color:Orange;font-weight:bold;">Moč (kW)</td><td style="background-color:Orange;font-weight:bold;width:200px;">    Leto postavitve</td>
+			</tr><tr>
+				<td align="left">Šentjernej</td><td align="center">11</td><td align="center">2016</td>
+			</tr><tr>
+				<td align="left">PIŠECE</td><td align="center">11</td><td align="center">2016</td>
+			</tr><tr>
+				<td align="left">LESKOVEC</td><td align="center">11</td><td align="center">2016</td>
+			</tr><tr>
+				<td align="left">Šentjernej</td><td align="center">11</td><td align="center">2016</td>
+			</tr><tr>
+				<td align="left">Brežice</td><td align="center">8</td><td align="center">2016</td>
+			</tr><tr>
+				<td align="left">Novo Mesto</td><td align="center">8,12</td><td align="center">2016</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">3</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">8</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Šentjernej</td><td align="center">8</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Dvor</td><td align="center">7</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Mirna Peč</td><td align="center">9</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Šmarješke Toplice</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Šmarješke Toplice</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Brusnice</td><td align="center">8</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Dobova</td><td align="center">9,12</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Straža</td><td align="center">9</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Gradac</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Šmarješke Toplice</td><td align="center">9</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Mirna</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Mirna</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">8</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Črnomelj</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Šmarješke Toplice</td><td align="center">7</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">7</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Dolenjske Toplice</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Šentjernej</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">8</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Metlika</td><td align="center">5</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Šmarješke Toplice</td><td align="center">8</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Šentjernej</td><td align="center">9</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Gradac</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Mirna</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Sevnica</td><td align="center">11</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Kapele</td><td align="center">9,975</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Cerklje ob Krki</td><td align="center">7,41</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Mirna</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Sevnica</td><td align="center">9,12</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Veliki Gaber</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Mirna</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Črnomelj</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Raka</td><td align="center">4,24</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebelno</td><td align="center">11</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Mokronog</td><td align="center">11</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Zabukovje</td><td align="center">3,7</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Brestanica</td><td align="center">7</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Uršna sela</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Blanca</td><td align="center">2,5</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Gradac</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Sevnica</td><td align="center">3,14</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Metlika</td><td align="center">9</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Šentrupert</td><td align="center">6,27</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Mirna</td><td align="center">11</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Artiče</td><td align="center">11</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Sevnica</td><td align="center">5,99</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Pišece</td><td align="center">11</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Pišece</td><td align="center">11</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Leskovec pri Krškem</td><td align="center">8</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Globoko</td><td align="center">7,83</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Pišece</td><td align="center">7,42</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Krško</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Mirna</td><td align="center">10</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Boštanj</td><td align="center">11</td><td align="center">2017</td>
+			</tr><tr>
+				<td align="left">Dobova</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šentjanž</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šentjanž</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Sevnica</td><td align="center">9</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Zabukovje</td><td align="center">9</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Pišece</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Sromlje</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Krmelj</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Škocjan</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Cerklje ob Krki</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Krško</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Boštanj</td><td align="center">9</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Sevnica</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Jesenice na Dolenjskem</td><td align="center">6</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Krško</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šentrupert</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Leskovec pri Krškem</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Brežice</td><td align="center">6</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šentrupert</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Dobova</td><td align="center">7,5</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Sevnica</td><td align="center">5,13</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Leskovec pri Krškem</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Artiče</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Veliki Gaber</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Črnomelj</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Dolenjske Toplice</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">9</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Suhor</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Suhor</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Mirna</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šentjernej</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Otočec</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šentjanž</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šmarješke Toplice</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">9</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Mirna Peč</td><td align="center">9</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">7</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šentjernej</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Dolenjske Toplice</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Črnomelj</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">9</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Stopiče</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">15</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Žužemberk</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Straža</td><td align="center">15</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Dvor</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šmarješke Toplice</td><td align="center">15</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Črnomelj</td><td align="center">15</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Gradac</td><td align="center">15</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Gradac</td><td align="center">15</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šentjernej</td><td align="center">15</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Velika Loka</td><td align="center">7</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Velika Loka</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Škocjan</td><td align="center">15</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Škocjan</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Črnomelj</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Metlika</td><td align="center">15</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Gradac</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Metlika</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Škocjan</td><td align="center">15</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Dragatuš</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Suhor</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šentrupert</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Dobrnič</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebelno</td><td align="center">10,98</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Mokronog</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Senovo</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Leskovec pri Krškem</td><td align="center">9,41</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Podbočje</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Brežice</td><td align="center">10,8</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Bizeljsko</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Mirna</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Sevnica</td><td align="center">9,9</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Artiče</td><td align="center">11,16</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Kostanjevica na Krki</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Leskovec pri Krškem</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Podbočje</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Leskovec pri Krškem</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Bizeljsko</td><td align="center">10,8</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Koprivnica</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Krško</td><td align="center">10,8</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Bizeljsko</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Krško</td><td align="center">8,25</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Leskovec pri Krškem</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Krško</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Dobova</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Gradac</td><td align="center">15</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Sevnica</td><td align="center">10,83</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Leskovec pri Krškem</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Veliki Gaber</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šentjernej</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šentjernej</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Trebnje</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Artiče</td><td align="center">11,16</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šentjernej</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Gradac</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">9</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Suhor</td><td align="center">7</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Krško</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Boštanj</td><td align="center">7</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Šentrupert</td><td align="center">10,98</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Leskovec pri Krškem</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Sevnica</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Krško</td><td align="center">11</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Krško</td><td align="center">7</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Blanca</td><td align="center">8,4</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Leskovec pri Krškem</td><td align="center">3,18</td><td align="center">2018</td>
+			</tr><tr>
+				<td align="left">Novo mesto</td><td align="center">10</td><td align="center">2018</td>
+			</tr><tr>
+				<td style="font-weight:bold;">Skupno do 8.5.2019</td><td></td><td align="center" style="font-weight:bold;">2016,115</td>
+			</tr>
+		</table>
+
+
+
+     <br />
+
+
+
+<h4>Opomba: Podatki so pridobljeni s strani SODO d.o.o.</h4>
+
+ </div>
+
+
+          </div>
+
+        <div id="main-window-bottom">
+        
+        
+   
+
+        
+        
+        
+        </div>
+      
+     
+     </div>
+     <div id="bottom">
+         
+		  <!-- footer and copyright notice -->
+	     <p>&nbsp;&copy; 2007-2019 PVportal, UL FE, LPVO, Vse pravice pridržane.</p>
+		  <!-- end footer and copyright notice -->
+	 
+        <!-- Start of StatCounter Code -->
+        <script type="text/javascript">
+            var sc_project = 3681995;
+            var sc_invisible = 0;
+            var sc_security = "6991875f"; 
+        </script>
+
+      <!--start counter-->
+        <script type="text/javascript"
+            src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+            class="statcounter"><a title="web counter"
+            href="http://statcounter.com/" target="_blank"><img
+            class="statcounter"
+            src="http://c.statcounter.com/3681995/0/6991875f/0/"
+            alt="web counter" ></a></div></noscript>
+        
+        <!-- End of StatCounter Code -->
+        
+
+        </div>
+     </div>
+
+    
+		<script type='text/javascript'>new Sys.WebForms.Menu({ element: 'mainMenu', disappearAfter: 500, orientation: 'horizontal', tabIndex: 0, disabled: false });</script><script type='text/javascript'>new Sys.WebForms.Menu({ element: 'blankSublinks_subMenu', disappearAfter: 500, orientation: 'horizontal', tabIndex: 0, disabled: false });</script></form>
+</body>
+</html>
