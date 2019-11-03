@@ -18,3 +18,9 @@ Na podlagi teh podatkov nameravam preveriti:
 * Po katerih regijah in krajih je največ interesa za sončne elektrarne in trend skozi leta. 
 * Moč sončnih elektrarn po regijah in trend skozi leta.
 * Je več šibkejših ali močnejših sončnih elektrarn.
+
+Dodana je CSV datoteka s podatki, ki jih bom analiziral. Poleg tega, je v reporzitoriju 
+še mapa z HTML datotekami strani s katerih sem prevzel podatke in python skripta, v kateri 
+iz HTML datoteke izluščim podatke in jih pretvorim v CSV datoteko. HTML strani so kopirane, saj 
+se pri filtrih ne spreminja URL spletne strani zato mi ni uspelo pridobiti podatkov s knjižnjico 
+request.
