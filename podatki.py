@@ -29,10 +29,10 @@ def get_dict_samooskrba(block):
     slovar = data.groupdict()
     return slovar
 
-tipi = {'Ime': str, 'Kraj': str, 'Leto': int, 'Moc': float, 'Regija': str}
+tipi = {'Ime': str, 'Kraj': str, 'Leto': int, 'Moc [kW]': float, 'Regija': str}
 
 SoncneElektrarne = []
-Stolpci = ['Ime', 'Kraj', 'Leto', 'Moc', 'Regija']
+Stolpci = ['Ime', 'Kraj', 'Leto', 'Moc [kW]', 'Regija']
 
 for regija in regije:
     elektrarne = get_block(regija)
@@ -44,7 +44,7 @@ for regija in regije:
 
 SoncneElektrarne = pd.DataFrame(SoncneElektrarne)
 SoncneElektrarne.columns = Stolpci
-SoncneElektrarne['Moc'] = [element.replace(',', '.') for element in SoncneElektrarne['Moc']]
+SoncneElektrarne['Moc [kW]'] = [element.replace(',', '.') for element in SoncneElektrarne['Moc [kW]']]
 SoncneElektrarne.astype(tipi)
 
 
@@ -59,9 +59,9 @@ for regija in regije:
         SoncneElektrarneSamooskrba.append(elektrarna)
 
 SoncneElektrarneSamooskrba = pd.DataFrame(SoncneElektrarneSamooskrba)
-SoncneElektrarneSamooskrba.columns = ['Ime', 'Kraj', 'Moc', 'Leto', 'Regija']
-SoncneElektrarneSamooskrba = SoncneElektrarneSamooskrba[['Ime', 'Kraj', 'Leto', 'Moc', 'Regija']]
-SoncneElektrarneSamooskrba['Moc'] = [element.replace(',', '.') for element in SoncneElektrarneSamooskrba['Moc']]
+SoncneElektrarneSamooskrba.columns = ['Ime', 'Kraj', 'Moc [kW]', 'Leto', 'Regija']
+SoncneElektrarneSamooskrba = SoncneElektrarneSamooskrba[['Ime', 'Kraj', 'Leto', 'Moc [kW]', 'Regija']]
+SoncneElektrarneSamooskrba['Moc [kW]'] = [element.replace(',', '.') for element in SoncneElektrarneSamooskrba['Moc [kW]']]
 SoncneElektrarneSamooskrba.astype(tipi)
 
 SkupnaTabela = pd.concat([SoncneElektrarneSamooskrba, SoncneElektrarne]) 
