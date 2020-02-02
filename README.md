@@ -24,8 +24,3 @@ Dodana je CSV datoteka s podatki, ki jih bom analiziral. Poleg tega, je v reporz
 iz HTML datoteke izluščim podatke in jih pretvorim v CSV datoteko. HTML strani so kopirane, saj 
 se pri filtrih ne spreminja URL spletne strani zato mi ni uspelo pridobiti podatkov s knjižnjico 
 request.
-
-Za pravilno delovanje je potrebno imeti nameščeno knjižnjico pandas. 
-Za pravilno delovanje python skripte podatki.py je potrebno biti v takem directory-u, da lahko iz njega pridemo v 
-mapo SoncneElektrarne. Torej, da je mapa SoncneElektrarne v trenutnem directoriyu. (Pot do datoteke naj bo predstavljena kot 
-"SoncneElektrarne/...").

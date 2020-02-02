@@ -66,4 +66,4 @@ SoncneElektrarneSamooskrba.astype(tipi)
 
 SkupnaTabela = pd.concat([SoncneElektrarneSamooskrba, SoncneElektrarne]) 
 
-SkupnaTabela.to_csv('SoncneElektrarne/podatki.csv')
+SkupnaTabela.to_csv('SoncneElektrarne/podatki.csv', index = False)
