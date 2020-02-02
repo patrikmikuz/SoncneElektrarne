@@ -27,4 +27,5 @@ request.
 
 Za pravilno delovanje je potrebno imeti nameščeno knjižnjico pandas. 
 Za pravilno delovanje python skripte podatki.py je potrebno biti v takem directory-u, da lahko iz njega pridemo v 
-mapo SoncneElektrarne. Torej, da je mapa SoncneElektrarne v trenutnem directoriyu.
+mapo SoncneElektrarne. Torej, da je mapa SoncneElektrarne v trenutnem directoriyu. (Pot do datoteke naj bo predstavljena kot 
+"SoncneElektrarne/...").
